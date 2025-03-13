@@ -16,11 +16,7 @@ namespace HocTiengAnh
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             Application.Run(new AdminHome());
-=======
-            Application.Run(new DsKhoaHoc());
->>>>>>> 0c57b37d8021287bdbcc9513650ae6695993675b
         }
     }
 }
