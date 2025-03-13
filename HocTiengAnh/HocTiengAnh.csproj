@@ -48,6 +48,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminBaiHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminBaiHoc.Designer.cs">
+      <DependentUpon>AdminBaiHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminHocVien.Designer.cs">
+      <DependentUpon>AdminHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminHome.Designer.cs">
+      <DependentUpon>AdminHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminKhoaHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminKhoaHoc.Designer.cs">
+      <DependentUpon>AdminKhoaHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +80,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminBaiHoc.resx">
+      <DependentUpon>AdminBaiHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminHocVien.resx">
+      <DependentUpon>AdminHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminHome.resx">
+      <DependentUpon>AdminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminKhoaHoc.resx">
+      <DependentUpon>AdminKhoaHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -64,6 +100,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -77,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
