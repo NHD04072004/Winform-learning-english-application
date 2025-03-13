@@ -63,9 +63,15 @@ namespace HocTiengAnh.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap user1 {
             get {
                 object obj = ResourceManager.GetObject("user1", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap z6394803753249_fd6515512734cfc9c93b1415f52f6174 {
+            get {
+                object obj = ResourceManager.GetObject("z6394803753249_fd6515512734cfc9c93b1415f52f6174", resourceCulture);
+>>>>>>> 0c57b37d8021287bdbcc9513650ae6695993675b
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="AdminBaiHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +72,13 @@
     </Compile>
     <Compile Include="AdminKhoaHoc.Designer.cs">
       <DependentUpon>AdminKhoaHoc.cs</DependentUpon>
+=======
+    <Compile Include="DsKhoaHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DsKhoaHoc.Designer.cs">
+      <DependentUpon>DsKhoaHoc.cs</DependentUpon>
+>>>>>>> 0c57b37d8021287bdbcc9513650ae6695993675b
     </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
@@ -80,6 +88,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="AdminBaiHoc.resx">
       <DependentUpon>AdminBaiHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +100,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminKhoaHoc.resx">
       <DependentUpon>AdminKhoaHoc.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="DsKhoaHoc.resx">
+      <DependentUpon>DsKhoaHoc.cs</DependentUpon>
+>>>>>>> 0c57b37d8021287bdbcc9513650ae6695993675b
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,6 +115,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
