@@ -29,7 +29,6 @@ namespace HocTiengAnh
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             this.SuspendLayout();
             // 
             // TrangChu
@@ -39,7 +38,6 @@ namespace HocTiengAnh
             this.ClientSize = new System.Drawing.Size(1225, 809);
             this.Name = "TrangChu";
             this.Text = "Form1";
-=======
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +62,6 @@ namespace HocTiengAnh
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
->>>>>>> DangkyDangnhap
             this.ResumeLayout(false);
 
         }

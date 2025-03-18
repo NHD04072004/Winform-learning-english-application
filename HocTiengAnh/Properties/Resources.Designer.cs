@@ -19,11 +19,7 @@ namespace HocTiengAnh.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-<<<<<<< HEAD
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
-=======
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
->>>>>>> DangkyDangnhap
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -67,41 +63,29 @@ namespace HocTiengAnh.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap user1 {
-            get {
-                object obj = ResourceManager.GetObject("user1", resourceCulture);
-=======
-        internal static System.Drawing.Bitmap pngtree_outline_user_icon_png_image_1727916 {
-            get {
-                object obj = ResourceManager.GetObject("pngtree-outline-user-icon-png-image_1727916", resourceCulture);
->>>>>>> DangkyDangnhap
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap z6394803753249_fd6515512734cfc9c93b1415f52f6174 {
-            get {
-                object obj = ResourceManager.GetObject("z6394803753249_fd6515512734cfc9c93b1415f52f6174", resourceCulture);
-=======
-        internal static System.Drawing.Bitmap pngtree_outline_user_icon_png_image_17279161 {
-            get {
-                object obj = ResourceManager.GetObject("pngtree-outline-user-icon-png-image_17279161", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
->>>>>>> DangkyDangnhap
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user1 {
+            get {
+                object obj = ResourceManager.GetObject("user1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z6394803753249_fd6515512734cfc9c93b1415f52f6174 {
+            get {
+                object obj = ResourceManager.GetObject("z6394803753249_fd6515512734cfc9c93b1415f52f6174", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

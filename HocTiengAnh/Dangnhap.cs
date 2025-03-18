@@ -140,14 +140,14 @@ namespace HocTiengAnh
                 if (isAdmin)
                 {
                     // Nếu là admin, mở giao diện Admin
-                    TrangChu trangChu = new TrangChu();
-                    trangChu.ShowDialog();
+                    AdminHome adminHome = new AdminHome();
+                    adminHome.ShowDialog();
                 }
                 else
                 {
                     // Nếu là user, mở giao diện User
-                    DanhSachKetQua danhSachKetQua = new DanhSachKetQua(username);
-                    danhSachKetQua.ShowDialog();
+                    TrangChu trangChu = new TrangChu();
+                    trangChu.ShowDialog();
                 }
 
                 this.Close();
