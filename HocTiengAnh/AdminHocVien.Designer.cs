@@ -103,6 +103,7 @@ namespace HocTiengAnh
             this.btnDSHocVien.TabIndex = 2;
             this.btnDSHocVien.Text = "HỌC VIÊN";
             this.btnDSHocVien.UseVisualStyleBackColor = false;
+            this.btnDSHocVien.Click += new System.EventHandler(this.btnDSHocVien_Click);
             // 
             // btnDSBaiHoc
             // 
@@ -117,6 +118,7 @@ namespace HocTiengAnh
             this.btnDSBaiHoc.TabIndex = 1;
             this.btnDSBaiHoc.Text = "BÀI HỌC";
             this.btnDSBaiHoc.UseVisualStyleBackColor = false;
+            this.btnDSBaiHoc.Click += new System.EventHandler(this.btnDSBaiHoc_Click);
             // 
             // btnDSKhoaHoc
             // 
@@ -131,6 +133,7 @@ namespace HocTiengAnh
             this.btnDSKhoaHoc.TabIndex = 0;
             this.btnDSKhoaHoc.Text = "KHÓA HỌC";
             this.btnDSKhoaHoc.UseVisualStyleBackColor = false;
+            this.btnDSKhoaHoc.Click += new System.EventHandler(this.btnDSKhoaHoc_Click);
             // 
             // btnXoa
             // 

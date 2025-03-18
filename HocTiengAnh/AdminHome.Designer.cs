@@ -35,24 +35,24 @@ namespace HocTiengAnh
             this.btnDSHocVien = new System.Windows.Forms.Button();
             this.btnDSBaiHoc = new System.Windows.Forms.Button();
             this.btnDSKhoaHoc = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTongHV = new System.Windows.Forms.Label();
+            this.dgvDSKhoaHoc = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTongKQ = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.dgvHocVien = new System.Windows.Forms.DataGridView();
-            this.lblTong = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblTongKQ = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTong = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTongHV = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoaHoc)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHocVien)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -71,7 +71,7 @@ namespace HocTiengAnh
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvHocVien);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvDSKhoaHoc);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
@@ -109,6 +109,7 @@ namespace HocTiengAnh
             this.btnDSHocVien.TabIndex = 2;
             this.btnDSHocVien.Text = "HỌC VIÊN";
             this.btnDSHocVien.UseVisualStyleBackColor = false;
+            this.btnDSHocVien.Click += new System.EventHandler(this.btnDSHocVien_Click);
             // 
             // btnDSBaiHoc
             // 
@@ -123,6 +124,7 @@ namespace HocTiengAnh
             this.btnDSBaiHoc.TabIndex = 1;
             this.btnDSBaiHoc.Text = "BÀI HỌC";
             this.btnDSBaiHoc.UseVisualStyleBackColor = false;
+            this.btnDSBaiHoc.Click += new System.EventHandler(this.btnDSBaiHoc_Click);
             // 
             // btnDSKhoaHoc
             // 
@@ -139,28 +141,16 @@ namespace HocTiengAnh
             this.btnDSKhoaHoc.UseVisualStyleBackColor = false;
             this.btnDSKhoaHoc.Click += new System.EventHandler(this.btnDSKhoaHoc_Click);
             // 
-            // panel1
+            // dgvDSKhoaHoc
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.lblTong);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.lblTongHV);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 183);
-            this.panel1.TabIndex = 0;
-            // 
-            // lblTongHV
-            // 
-            this.lblTongHV.AutoSize = true;
-            this.lblTongHV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongHV.Location = new System.Drawing.Point(196, 44);
-            this.lblTongHV.Name = "lblTongHV";
-            this.lblTongHV.Size = new System.Drawing.Size(36, 25);
-            this.lblTongHV.TabIndex = 0;
-            this.lblTongHV.Text = "??";
+            this.dgvDSKhoaHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSKhoaHoc.Location = new System.Drawing.Point(12, 207);
+            this.dgvDSKhoaHoc.Name = "dgvDSKhoaHoc";
+            this.dgvDSKhoaHoc.RowHeadersWidth = 51;
+            this.dgvDSKhoaHoc.RowTemplate.Height = 24;
+            this.dgvDSKhoaHoc.Size = new System.Drawing.Size(660, 258);
+            this.dgvDSKhoaHoc.TabIndex = 2;
+            this.dgvDSKhoaHoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKhoaHoc_CellContentClick);
             // 
             // panel2
             // 
@@ -175,24 +165,15 @@ namespace HocTiengAnh
             this.panel2.Size = new System.Drawing.Size(313, 183);
             this.panel2.TabIndex = 1;
             // 
-            // lblTongKQ
+            // label1
             // 
-            this.lblTongKQ.AutoSize = true;
-            this.lblTongKQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongKQ.Location = new System.Drawing.Point(196, 44);
-            this.lblTongKQ.Name = "lblTongKQ";
-            this.lblTongKQ.Size = new System.Drawing.Size(36, 25);
-            this.lblTongKQ.TabIndex = 1;
-            this.lblTongKQ.Text = "??";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 117);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 147);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "TỔNG SỐ KẾT QUẢ";
             // 
             // pictureBox2
             // 
@@ -203,15 +184,28 @@ namespace HocTiengAnh
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // dgvHocVien
+            // lblTongKQ
             // 
-            this.dgvHocVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHocVien.Location = new System.Drawing.Point(12, 207);
-            this.dgvHocVien.Name = "dgvHocVien";
-            this.dgvHocVien.RowHeadersWidth = 51;
-            this.dgvHocVien.RowTemplate.Height = 24;
-            this.dgvHocVien.Size = new System.Drawing.Size(660, 258);
-            this.dgvHocVien.TabIndex = 2;
+            this.lblTongKQ.AutoSize = true;
+            this.lblTongKQ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongKQ.Location = new System.Drawing.Point(196, 44);
+            this.lblTongKQ.Name = "lblTongKQ";
+            this.lblTongKQ.Size = new System.Drawing.Size(36, 25);
+            this.lblTongKQ.TabIndex = 1;
+            this.lblTongKQ.Text = "??";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.lblTong);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lblTongHV);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(314, 183);
+            this.panel1.TabIndex = 0;
             // 
             // lblTong
             // 
@@ -223,15 +217,24 @@ namespace HocTiengAnh
             this.lblTong.TabIndex = 2;
             this.lblTong.Text = "TỔNG SỐ HỌC VIÊN";
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 147);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "TỔNG SỐ KẾT QUẢ";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(116, 117);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblTongHV
+            // 
+            this.lblTongHV.AutoSize = true;
+            this.lblTongHV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongHV.Location = new System.Drawing.Point(196, 44);
+            this.lblTongHV.Name = "lblTongHV";
+            this.lblTongHV.Size = new System.Drawing.Size(36, 25);
+            this.lblTongHV.TabIndex = 0;
+            this.lblTongHV.Text = "??";
             // 
             // AdminHome
             // 
@@ -241,17 +244,18 @@ namespace HocTiengAnh
             this.Controls.Add(this.splitContainer1);
             this.Name = "AdminHome";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.AdminHome_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoaHoc)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHocVien)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,7 +273,7 @@ namespace HocTiengAnh
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTongHV;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridView dgvHocVien;
+        private System.Windows.Forms.DataGridView dgvDSKhoaHoc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTong;
     }

@@ -35,16 +35,19 @@ namespace HocTiengAnh
             this.btnDSHocVien = new System.Windows.Forms.Button();
             this.btnDSBaiHoc = new System.Windows.Forms.Button();
             this.btnDSKhoaHoc = new System.Windows.Forms.Button();
-            this.lblDSKhoaHoc = new System.Windows.Forms.Label();
-            this.dgvDSKhoaHoc = new System.Windows.Forms.DataGridView();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
+            this.txtTenKhoaHoc = new System.Windows.Forms.TextBox();
+            this.lblTenKhoaHoc = new System.Windows.Forms.Label();
+            this.txtMaKhoaHoc = new System.Windows.Forms.TextBox();
+            this.lblMaKhoaHoc = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.lblDSKhoaHoc = new System.Windows.Forms.Label();
+            this.flpDSKhoaHoc = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoaHoc)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -63,10 +66,14 @@ namespace HocTiengAnh
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.flpDSKhoaHoc);
+            this.splitContainer1.Panel2.Controls.Add(this.txtTenKhoaHoc);
+            this.splitContainer1.Panel2.Controls.Add(this.lblTenKhoaHoc);
+            this.splitContainer1.Panel2.Controls.Add(this.txtMaKhoaHoc);
+            this.splitContainer1.Panel2.Controls.Add(this.lblMaKhoaHoc);
             this.splitContainer1.Panel2.Controls.Add(this.btnXoa);
             this.splitContainer1.Panel2.Controls.Add(this.btnSua);
             this.splitContainer1.Panel2.Controls.Add(this.btnThem);
-            this.splitContainer1.Panel2.Controls.Add(this.dgvDSKhoaHoc);
             this.splitContainer1.Panel2.Controls.Add(this.lblDSKhoaHoc);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(836, 482);
@@ -103,6 +110,7 @@ namespace HocTiengAnh
             this.btnDSHocVien.TabIndex = 2;
             this.btnDSHocVien.Text = "HỌC VIÊN";
             this.btnDSHocVien.UseVisualStyleBackColor = false;
+            this.btnDSHocVien.Click += new System.EventHandler(this.btnDSHocVien_Click);
             // 
             // btnDSBaiHoc
             // 
@@ -117,6 +125,7 @@ namespace HocTiengAnh
             this.btnDSBaiHoc.TabIndex = 1;
             this.btnDSBaiHoc.Text = "BÀI HỌC";
             this.btnDSBaiHoc.UseVisualStyleBackColor = false;
+            this.btnDSBaiHoc.Click += new System.EventHandler(this.btnDSBaiHoc_Click);
             // 
             // btnDSKhoaHoc
             // 
@@ -131,6 +140,76 @@ namespace HocTiengAnh
             this.btnDSKhoaHoc.TabIndex = 0;
             this.btnDSKhoaHoc.Text = "KHÓA HỌC";
             this.btnDSKhoaHoc.UseVisualStyleBackColor = false;
+            this.btnDSKhoaHoc.Click += new System.EventHandler(this.btnDSKhoaHoc_Click);
+            // 
+            // txtTenKhoaHoc
+            // 
+            this.txtTenKhoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKhoaHoc.Location = new System.Drawing.Point(444, 80);
+            this.txtTenKhoaHoc.Name = "txtTenKhoaHoc";
+            this.txtTenKhoaHoc.Size = new System.Drawing.Size(175, 27);
+            this.txtTenKhoaHoc.TabIndex = 8;
+            // 
+            // lblTenKhoaHoc
+            // 
+            this.lblTenKhoaHoc.AutoSize = true;
+            this.lblTenKhoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenKhoaHoc.Location = new System.Drawing.Point(321, 83);
+            this.lblTenKhoaHoc.Name = "lblTenKhoaHoc";
+            this.lblTenKhoaHoc.Size = new System.Drawing.Size(114, 20);
+            this.lblTenKhoaHoc.TabIndex = 7;
+            this.lblTenKhoaHoc.Text = "Tên khóa học:";
+            // 
+            // txtMaKhoaHoc
+            // 
+            this.txtMaKhoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKhoaHoc.Location = new System.Drawing.Point(138, 80);
+            this.txtMaKhoaHoc.Name = "txtMaKhoaHoc";
+            this.txtMaKhoaHoc.Size = new System.Drawing.Size(147, 27);
+            this.txtMaKhoaHoc.TabIndex = 6;
+            // 
+            // lblMaKhoaHoc
+            // 
+            this.lblMaKhoaHoc.AutoSize = true;
+            this.lblMaKhoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaKhoaHoc.Location = new System.Drawing.Point(16, 83);
+            this.lblMaKhoaHoc.Name = "lblMaKhoaHoc";
+            this.lblMaKhoaHoc.Size = new System.Drawing.Size(109, 20);
+            this.lblMaKhoaHoc.TabIndex = 5;
+            this.lblMaKhoaHoc.Text = "Mã khóa học:";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(504, 419);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(115, 52);
+            this.btnXoa.TabIndex = 4;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(383, 419);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(115, 52);
+            this.btnSua.TabIndex = 3;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(262, 419);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(115, 52);
+            this.btnThem.TabIndex = 2;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lblDSKhoaHoc
             // 
@@ -142,45 +221,12 @@ namespace HocTiengAnh
             this.lblDSKhoaHoc.TabIndex = 0;
             this.lblDSKhoaHoc.Text = "CÁC KHÓA HỌC CỦA BẠN";
             // 
-            // dgvDSKhoaHoc
+            // flpDSKhoaHoc
             // 
-            this.dgvDSKhoaHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSKhoaHoc.Location = new System.Drawing.Point(27, 88);
-            this.dgvDSKhoaHoc.Name = "dgvDSKhoaHoc";
-            this.dgvDSKhoaHoc.RowHeadersWidth = 51;
-            this.dgvDSKhoaHoc.RowTemplate.Height = 24;
-            this.dgvDSKhoaHoc.Size = new System.Drawing.Size(579, 271);
-            this.dgvDSKhoaHoc.TabIndex = 1;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(249, 392);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(115, 52);
-            this.btnThem.TabIndex = 2;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(370, 392);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(115, 52);
-            this.btnSua.TabIndex = 3;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(491, 392);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(115, 52);
-            this.btnXoa.TabIndex = 4;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.flpDSKhoaHoc.Location = new System.Drawing.Point(20, 126);
+            this.flpDSKhoaHoc.Name = "flpDSKhoaHoc";
+            this.flpDSKhoaHoc.Size = new System.Drawing.Size(599, 287);
+            this.flpDSKhoaHoc.TabIndex = 9;
             // 
             // AdminKhoaHoc
             // 
@@ -190,12 +236,12 @@ namespace HocTiengAnh
             this.Controls.Add(this.splitContainer1);
             this.Name = "AdminKhoaHoc";
             this.Text = "AdminKhoaHoc";
+            this.Load += new System.EventHandler(this.AdminKhoaHoc_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSKhoaHoc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,7 +256,11 @@ namespace HocTiengAnh
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridView dgvDSKhoaHoc;
         private System.Windows.Forms.Label lblDSKhoaHoc;
+        private System.Windows.Forms.TextBox txtTenKhoaHoc;
+        private System.Windows.Forms.Label lblTenKhoaHoc;
+        private System.Windows.Forms.TextBox txtMaKhoaHoc;
+        private System.Windows.Forms.Label lblMaKhoaHoc;
+        private System.Windows.Forms.FlowLayoutPanel flpDSKhoaHoc;
     }
 }
