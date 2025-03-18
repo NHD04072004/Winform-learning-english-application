@@ -137,7 +137,7 @@ private void btnDangNhap_Click(object sender, EventArgs e)
 
         private int Check_login(string username, string password)
         {
-            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh_Toan"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -173,7 +173,7 @@ private void btnDangNhap_Click(object sender, EventArgs e)
             {
                 if (xacnhanpassword == password)
                 {
-                    string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh_Toan"].ConnectionString;
+                    string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
 
                     using (SqlConnection conn = new SqlConnection(constr))
                     {
