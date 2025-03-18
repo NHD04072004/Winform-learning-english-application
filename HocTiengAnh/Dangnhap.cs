@@ -87,9 +87,11 @@ namespace HocTiengAnh
             errorProvider.SetError(tbPassword, "");
         }
 
-        private int Check_login(string username, string password)
+        private int Check_login(string username, string password, out bool isAdmin)
         {
             string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh_Toan"].ConnectionString;
+            int ktr = -1;  // Mặc định là tài khoản không tồn tại
+            isAdmin = false;
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -101,33 +103,56 @@ namespace HocTiengAnh
 
                     conn.Open();
 
-                    return (int)cmd.ExecuteScalar();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())  // Nếu có dữ liệu trả về
+                        {
+                            ktr = reader.GetInt32(0);  // Cột `ktr`
+                            if (!reader.IsDBNull(1))   // Kiểm tra nếu `bCheckAdmin` không phải NULL
+                            {
+                                isAdmin = reader.GetBoolean(1);  // Cột `bCheckAdmin`
+                            }
+                        }
+                    }
                 }
             }
+            return ktr;
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             string username = tbUsername.Text.Trim();
             string password = tbPassword.Text.Trim();
+
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 lbThongbaoloi.Text = "Vui lòng nhập đầy đủ thông tin!";
                 return;
             }
 
-            int ktr = Check_login(username, password);
+            bool isAdmin;
+            int ktr = Check_login(username, password, out isAdmin);
 
-            if(ktr == 1)
+            if (ktr == 1)
             {
                 this.Hide();
-                DanhSachKetQua danhSachKetQua = new DanhSachKetQua(username);
-                danhSachKetQua.ShowDialog();
-                //TrangChu trangChu = new TrangChu();
-                //trangChu.ShowDialog();
+
+                if (isAdmin)
+                {
+                    // Nếu là admin, mở giao diện Admin
+                    TrangChu trangChu = new TrangChu();
+                    trangChu.ShowDialog();
+                }
+                else
+                {
+                    // Nếu là user, mở giao diện User
+                    DanhSachKetQua danhSachKetQua = new DanhSachKetQua(username);
+                    danhSachKetQua.ShowDialog();
+                }
+
                 this.Close();
             }
-            else if(ktr == 0)
+            else if (ktr == 0)
             {
                 lbThongbaoloi.Text = "Mật khẩu không đúng!";
             }
@@ -136,6 +161,7 @@ namespace HocTiengAnh
                 lbThongbaoloi.Text = "Tài khoản này không tồn tại!";
             }
         }
+
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
