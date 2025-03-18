@@ -90,7 +90,7 @@ namespace HocTiengAnh
         private int Check_login(string username, string password, out bool isAdmin)
         {
             string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh_Toan"].ConnectionString;
-            int ktr = -1;  // Mặc định là tài khoản không tồn tại
+            int ktr = -1;
             isAdmin = false;
 
             using (SqlConnection conn = new SqlConnection(constr))
@@ -105,12 +105,12 @@ namespace HocTiengAnh
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())  // Nếu có dữ liệu trả về
+                        if (reader.Read())
                         {
-                            ktr = reader.GetInt32(0);  // Cột `ktr`
-                            if (!reader.IsDBNull(1))   // Kiểm tra nếu `bCheckAdmin` không phải NULL
+                            ktr = reader.GetInt32(0);
+                            if (!reader.IsDBNull(1))
                             {
-                                isAdmin = reader.GetBoolean(1);  // Cột `bCheckAdmin`
+                                isAdmin = reader.GetBoolean(1);
                             }
                         }
                     }
