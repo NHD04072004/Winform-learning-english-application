@@ -1,7 +1,7 @@
 ﻿
 namespace HocTiengAnh
 {
-    partial class DsKhoaHoc
+    partial class DsBaiHoc
     {
         /// <summary>
         /// Required designer variable.
@@ -33,8 +33,8 @@ namespace HocTiengAnh
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnDSKH_user = new System.Windows.Forms.Button();
             this.btnDSKHoaHoc = new System.Windows.Forms.Button();
-            this.flpDSKhoaHoc = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblDSkhoaHoc = new System.Windows.Forms.Label();
+            this.flpDSBaiHoc = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblDSBaiHoc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -58,11 +58,11 @@ namespace HocTiengAnh
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.flpDSKhoaHoc);
-            this.splitContainer1.Panel2.Controls.Add(this.lblDSkhoaHoc);
+            this.splitContainer1.Panel2.Controls.Add(this.flpDSBaiHoc);
+            this.splitContainer1.Panel2.Controls.Add(this.lblDSBaiHoc);
             this.splitContainer1.Size = new System.Drawing.Size(1441, 938);
-            this.splitContainer1.SplitterDistance = 370;
-            this.splitContainer1.TabIndex = 4;
+            this.splitContainer1.SplitterDistance = 399;
+            this.splitContainer1.TabIndex = 3;
             // 
             // btnAccount
             // 
@@ -98,35 +98,34 @@ namespace HocTiengAnh
             this.btnDSKHoaHoc.UseVisualStyleBackColor = true;
             this.btnDSKHoaHoc.Click += new System.EventHandler(this.btnDSKHoaHoc_Click);
             // 
-            // flpDSKhoaHoc
+            // flpDSBaiHoc
             // 
-            this.flpDSKhoaHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.flpDSBaiHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpDSKhoaHoc.Location = new System.Drawing.Point(38, 88);
-            this.flpDSKhoaHoc.Name = "flpDSKhoaHoc";
-            this.flpDSKhoaHoc.Size = new System.Drawing.Size(987, 734);
-            this.flpDSKhoaHoc.TabIndex = 1;
+            this.flpDSBaiHoc.Location = new System.Drawing.Point(38, 88);
+            this.flpDSBaiHoc.Name = "flpDSBaiHoc";
+            this.flpDSBaiHoc.Size = new System.Drawing.Size(984, 832);
+            this.flpDSBaiHoc.TabIndex = 1;
             // 
-            // lblDSkhoaHoc
+            // lblDSBaiHoc
             // 
-            this.lblDSkhoaHoc.AutoSize = true;
-            this.lblDSkhoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDSkhoaHoc.Location = new System.Drawing.Point(31, 22);
-            this.lblDSkhoaHoc.Name = "lblDSkhoaHoc";
-            this.lblDSkhoaHoc.Size = new System.Drawing.Size(621, 42);
-            this.lblDSkhoaHoc.TabIndex = 0;
-            this.lblDSkhoaHoc.Text = "CÁC kHÓA HỌC DÀNH CHO BẠN";
+            this.lblDSBaiHoc.AutoSize = true;
+            this.lblDSBaiHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDSBaiHoc.Location = new System.Drawing.Point(31, 22);
+            this.lblDSBaiHoc.Name = "lblDSBaiHoc";
+            this.lblDSBaiHoc.Size = new System.Drawing.Size(281, 42);
+            this.lblDSBaiHoc.TabIndex = 0;
+            this.lblDSBaiHoc.Text = "CÁC BÀI HỌC ";
             // 
-            // DsKhoaHoc
+            // DsBaiHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1410, 923);
+            this.ClientSize = new System.Drawing.Size(1411, 923);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "DsKhoaHoc";
-            this.Text = "DsKhoaHoc";
-            this.Load += new System.EventHandler(this.DsKhoaHoc_Load);
+            this.Name = "DsBaiHoc";
+            this.Text = "DsBaiHoc";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
@@ -142,7 +141,7 @@ namespace HocTiengAnh
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnDSKH_user;
         private System.Windows.Forms.Button btnDSKHoaHoc;
-        private System.Windows.Forms.FlowLayoutPanel flpDSKhoaHoc;
-        private System.Windows.Forms.Label lblDSkhoaHoc;
+        private System.Windows.Forms.FlowLayoutPanel flpDSBaiHoc;
+        private System.Windows.Forms.Label lblDSBaiHoc;
     }
 }
