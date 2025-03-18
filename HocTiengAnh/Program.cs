@@ -16,11 +16,7 @@ namespace HocTiengAnh
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new TrangChu());
             Application.Run(new Dangnhap());
-            //Application.Run(new Dangky());
-            //Application.Run(new DSCauhoi());
-            //Application.Run(new DanhSachKetQua());
         }
     }
 }

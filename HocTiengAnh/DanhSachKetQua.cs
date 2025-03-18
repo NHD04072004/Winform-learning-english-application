@@ -142,5 +142,13 @@ namespace HocTiengAnh
             dangnhap.ShowDialog();
             this.Close();
         }
+
+        private void btnKhoaHoc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DsKhoaHoc dsKhoaHoc = new DsKhoaHoc();
+            dsKhoaHoc.ShowDialog();
+            this.Close();
+        }
     }
 }
