@@ -16,11 +16,7 @@ namespace HocTiengAnh
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new AdminHome());
-=======
-            Application.Run(new Question("BH001"));
->>>>>>> QuestionBranch(Ninh)
+            Application.Run(new TrangChu());
         }
     }
 }
