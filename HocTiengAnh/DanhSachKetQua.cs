@@ -134,5 +134,10 @@ namespace HocTiengAnh
         {
             
         }
+
+        private void btnDangxuat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
