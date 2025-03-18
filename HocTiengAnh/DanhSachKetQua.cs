@@ -137,7 +137,10 @@ namespace HocTiengAnh
 
         private void btnDangxuat_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Dangnhap dangnhap = new Dangnhap();
+            dangnhap.ShowDialog();
+            this.Close();
         }
     }
 }
