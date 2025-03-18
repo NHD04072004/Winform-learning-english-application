@@ -16,5 +16,10 @@ namespace HocTiengAnh
         {
             InitializeComponent();
         }
+
+        private void TrangChu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

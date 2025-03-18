@@ -89,7 +89,7 @@ namespace HocTiengAnh
 
         private int Check_login(string username, string password, out bool isAdmin)
         {
-            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh_Toan"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
             int ktr = -1;
             isAdmin = false;
 

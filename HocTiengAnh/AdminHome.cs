@@ -18,6 +18,7 @@ namespace HocTiengAnh
         {
             InitializeComponent();
         }
+
         public string connectString = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
