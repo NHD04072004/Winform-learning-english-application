@@ -35,7 +35,9 @@ namespace HocTiengAnh
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            //Ve trang Home
+            this.Hide();
+            TrangChu tc = new TrangChu(MaBaiHoc);
+            tc.ShowDialog();
         }
     }
 }

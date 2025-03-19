@@ -133,9 +133,9 @@ namespace HocTiengAnh
 
         private void btnDSKHoaHoc_Click(object sender, EventArgs e)
         {
+            this.Hide();
             DsKhoaHoc dskh = new DsKhoaHoc(tenTK);
             dskh.ShowDialog();
-            this.Hide();
             
         }
 

@@ -32,23 +32,23 @@ namespace HocTiengAnh
 
         private void btnDSKhoaHoc_Click(object sender, EventArgs e)
         {
+            this.Hide();
             DsKhoaHoc dskh = new DsKhoaHoc(tenTK);
             dskh.ShowDialog();
-            this.Hide();
         }
 
         private void btnDSKH_user_Click(object sender, EventArgs e)
         {
+            this.Hide();
             DsBaiHoc dsbh = new DsBaiHoc(tenTK);
             dsbh.ShowDialog();
-            this.Hide();
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Dangnhap login = new Dangnhap();
             login.ShowDialog();
-            this.Hide();
         }
     }
 }

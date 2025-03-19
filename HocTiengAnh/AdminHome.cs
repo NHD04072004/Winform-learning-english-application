@@ -71,9 +71,9 @@ namespace HocTiengAnh
 
         private void btnDSKhoaHoc_Click(object sender, EventArgs e)
         {
+            this.Hide();
             AdminKhoaHoc adminKhoaHocForm = new AdminKhoaHoc();
             adminKhoaHocForm.ShowDialog();
-            this.Hide();
         }
 
         private void AdminHome_Load(object sender, EventArgs e)
@@ -84,16 +84,16 @@ namespace HocTiengAnh
 
         private void btnDSBaiHoc_Click(object sender, EventArgs e)
         {
-            AdminBaiHoc adminBaiHocForm = new AdminBaiHoc();
-            adminBaiHocForm.Show();
             this.Hide();
+            AdminBaiHoc adminBaiHocForm = new AdminBaiHoc();
+            adminBaiHocForm.ShowDialog();
         }
 
         private void btnDSHocVien_Click(object sender, EventArgs e)
         {
-            AdminHocVien adminHocVienForm = new AdminHocVien();
-            adminHocVienForm.Show();
             this.Hide();
+            AdminHocVien adminHocVienForm = new AdminHocVien();
+            adminHocVienForm.ShowDialog();
         }
 
         private void dgvDSKhoaHoc_CellContentClick(object sender, DataGridViewCellEventArgs e)

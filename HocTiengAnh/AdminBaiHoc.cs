@@ -33,9 +33,9 @@ namespace HocTiengAnh
 
         private void btnDSKhoaHoc_Click(object sender, EventArgs e)
         {
-            AdminKhoaHoc adminKhoaHocForm = new AdminKhoaHoc();
-            adminKhoaHocForm.Show();
             this.Hide();
+            AdminKhoaHoc adminKhoaHocForm = new AdminKhoaHoc();
+            adminKhoaHocForm.ShowDialog();
         }
 
         private void btnDSBaiHoc_Click(object sender, EventArgs e)
@@ -45,9 +45,9 @@ namespace HocTiengAnh
 
         private void btnDSHocVien_Click(object sender, EventArgs e)
         {
-            AdminHocVien adminHocVienForm = new AdminHocVien();
-            adminHocVienForm.Show();
             this.Hide();
+            AdminHocVien adminHocVienForm = new AdminHocVien();
+            adminHocVienForm.ShowDialog();
         }
         private void LoadDSBaiHoc()
         {

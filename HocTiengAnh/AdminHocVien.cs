@@ -27,16 +27,16 @@ namespace HocTiengAnh
 
         private void btnDSKhoaHoc_Click(object sender, EventArgs e)
         {
-            AdminKhoaHoc adminKhoaHocForm = new AdminKhoaHoc();
-            adminKhoaHocForm.Show();
             this.Hide();
+            AdminKhoaHoc adminKhoaHocForm = new AdminKhoaHoc();
+            adminKhoaHocForm.ShowDialog();
         }
 
         private void btnDSBaiHoc_Click(object sender, EventArgs e)
         {
-            AdminBaiHoc adminBaiHocForm = new AdminBaiHoc();
-            adminBaiHocForm.Show();
             this.Hide();
+            AdminBaiHoc adminBaiHocForm = new AdminBaiHoc();
+            adminBaiHocForm.ShowDialog();
         }
 
         private void btnDSHocVien_Click(object sender, EventArgs e)
