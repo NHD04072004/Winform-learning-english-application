@@ -2,13 +2,15 @@
 
 USE QUANLYKHOAHOCTIENGANH;
 
+USE master;
+SELECT * FROM sys.dm_exec_requests WHERE database_id = DB_ID('model');
 
 CREATE TABLE [dbo].[tblTaiKhoan] (
     [iMaTK]       INT IDENTITY(1,1),
     [sTenTK]      VARCHAR (50) NOT NULL ,
     [sEmail]      VARCHAR (MAX) NULL,
     [sMatKhau]    VARCHAR (50)  NOT NULL,
-    [bCheckAdmin] BIT           NULL,
+    [bCheckAdmin] BIT           CONSTRAINT [DEFAULT_tblTaiKhoan_bCheckAdmin] DEFAULT 0 NOT NULL,
     CONSTRAINT [PK_tblTaiKhoan] PRIMARY KEY CLUSTERED ([iMaTK] ASC)
 );
 GO
