@@ -21,5 +21,25 @@ namespace HocTiengAnh
         {
 
         }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnDSKhoaHoc_Click(object sender, EventArgs e)
+        {
+            DsKhoaHoc dskh = new DsKhoaHoc();
+            dskh.Show();
+            this.Hide();
+        }
+
+        private void btnDSKH_user_Click(object sender, EventArgs e)
+        {
+            int maTK = 6;
+            DsBaiHoc dsbh = new DsBaiHoc(maTK);
+            dsbh.Show();
+            this.Hide();
+        }
     }
 }
