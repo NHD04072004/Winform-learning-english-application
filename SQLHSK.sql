@@ -625,3 +625,93 @@ begin
 	ORDER BY tblCauHoi.sMaCauHoi ASC;
 end
 GO
+
+
+
+-- của toản
+CREATE PROC check_login
+(
+	@stentk VARCHAR(50),
+	@smatkhau VARCHAR(50)
+)
+AS
+BEGIN
+	IF NOT EXISTS (SELECT 1 FROM tblTaiKhoan WHERE sTenTK = @stentk)
+	BEGIN
+		SELECT -1 AS ktr, NULL AS bCheckAdmin;
+		RETURN;
+	END
+	
+	DECLARE @bCheckAdmin BIT;
+	
+	IF EXISTS (SELECT 1 FROM tblTaiKhoan WHERE sTenTK = @stentk AND sMatKhau = @smatkhau)
+	BEGIN
+		SELECT @bCheckAdmin = bCheckAdmin FROM tblTaiKhoan WHERE sTenTK = @stentk;
+		SELECT 1 AS ktr, @bCheckAdmin AS bCheckAdmin;
+	END
+	ELSE
+	BEGIN
+		SELECT 0 AS ktr, NULL AS bCheckAdmin;
+	END
+END
+
+
+-- Hàm đăng nhập tài khoản
+CREATE PROC insert_data_login
+(
+	@stentk VARCHAR(50),
+	@semail VARCHAR(MAX),
+	@smatkhau VARCHAR(50)
+)
+AS
+BEGIN
+	INSERT INTO tblTaiKhoan(sTenTK, sEmail, sMatKhau)
+	VALUES (@stentk, @semail, @smatkhau)
+END
+
+------
+CREATE PROC LayBaiHoc
+(
+	@tentk VARCHAR (50)
+)
+AS
+BEGIN
+	SELECT TOP 4 sTenBaiHoc FROM tblBaiHoc, tblBangKetQua, tblTaiKhoan WHERE tblBaiHoc.sMaBaiHoc = tblBangKetQua.sMaBaiHoc AND tblBangKetQua.iMaTK = tblTaiKhoan.iMaTK AND tblTaiKhoan.sTenTK = @tentk
+END
+
+
+------
+CREATE PROC LayKetQuaBaiLam
+(
+	@tentk VARCHAR (50)
+)
+AS
+BEGIN
+	SELECT tblTaiKhoan.sTenTK AS 'Tên tài khoản',
+		tblBaiHoc.sTenBaiHoc AS 'Tên bài học',
+		tblBangKetQua.dThoiGianNop AS 'Thời gian nộp',
+		tblBangKetQua.fDiem AS 'Điểm'
+	FROM tblBaiHoc, tblBangKetQua, tblTaiKhoan
+	WHERE tblBaiHoc.sMaBaiHoc = tblBangKetQua.sMaBaiHoc
+	AND tblBangKetQua.iMaTK = tblTaiKhoan.iMaTK
+	AND tblTaiKhoan.sTenTK = @tentk
+END
+
+-------
+CREATE PROC LayKetQuaBaiHoc
+(
+	@tentk VARCHAR(50),
+	@tenBaiHoc NVARCHAR(100)
+)
+AS
+BEGIN
+	SELECT tblTaiKhoan.sTenTK AS 'Tên tài khoản', 
+		   tblBaiHoc.sTenBaiHoc AS 'Tên bài học', 
+		   tblBangKetQua.dThoiGianNop AS 'Thời gian nộp', 
+		   tblBangKetQua.fDiem AS 'Điểm'
+	FROM tblBaiHoc, tblBangKetQua, tblTaiKhoan
+	WHERE tblBaiHoc.sMaBaiHoc = tblBangKetQua.sMaBaiHoc 
+	  AND tblBangKetQua.iMaTK = tblTaiKhoan.iMaTK 
+	  AND tblTaiKhoan.sTenTK = @tentk
+	  AND tblBaiHoc.sTenBaiHoc = @tenBaiHoc
+END
