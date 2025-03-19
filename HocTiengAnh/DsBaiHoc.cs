@@ -38,7 +38,7 @@ namespace HocTiengAnh
                         cmd.Connection = conn;
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.CommandText = "dskhcb";
-                        cmd.Parameters.AddWithValue("@maTK", Adapter.SessionManager.Instance.CurrentAccount.MaTaiKhoan);
+                        cmd.Parameters.AddWithValue("@tenTK", Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan);
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
@@ -152,7 +152,6 @@ namespace HocTiengAnh
             this.Hide();
             DanhSachKetQua dskq = new DanhSachKetQua(Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan);
             dskq.ShowDialog();
-            this.Close();
         }
     }
 }

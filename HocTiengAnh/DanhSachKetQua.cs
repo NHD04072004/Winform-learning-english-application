@@ -141,7 +141,6 @@ namespace HocTiengAnh
             this.Hide();
             Dangnhap dangnhap = new Dangnhap();
             dangnhap.ShowDialog();
-            this.Close();
         }
 
         private void btnKhoaHoc_Click(object sender, EventArgs e)

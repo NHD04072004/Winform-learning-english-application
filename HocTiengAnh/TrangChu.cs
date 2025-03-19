@@ -12,6 +12,7 @@ namespace HocTiengAnh
 {
     public partial class TrangChu : Form
     {
+
         public TrangChu()
         {
             InitializeComponent();
@@ -42,9 +43,9 @@ namespace HocTiengAnh
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Dangnhap login = new Dangnhap();
             login.ShowDialog();
-            this.Hide();
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
