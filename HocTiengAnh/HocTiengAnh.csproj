@@ -79,6 +79,12 @@
     <Compile Include="AdminKhoaHoc.Designer.cs">
       <DependentUpon>AdminKhoaHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="crpKetQuaHocVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpKetQuaHocVien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DsBaiHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="AdminChiTietHocVien.Designer.cs">
       <DependentUpon>AdminChiTietHocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReportHocVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrystalReportHocVien.Designer.cs">
+      <DependentUpon>CrystalReportHocVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Result.cs" />
@@ -158,6 +170,10 @@
     <EmbeddedResource Include="AdminKhoaHoc.resx">
       <DependentUpon>AdminKhoaHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="crpKetQuaHocVien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpKetQuaHocVien.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DsBaiHoc.resx">
       <DependentUpon>DsBaiHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminChiTietHocVien.resx">
       <DependentUpon>AdminChiTietHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportHocVien.resx">
+      <DependentUpon>CrystalReportHocVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

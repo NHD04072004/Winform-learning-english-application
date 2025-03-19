@@ -155,7 +155,7 @@ namespace HocTiengAnh
         private void btnTrangchu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TrangChu trangChu = new TrangChu(_hienNguoiDung);
+            TrangChu trangChu = new TrangChu();
             trangChu.ShowDialog();
             this.Close();
         }

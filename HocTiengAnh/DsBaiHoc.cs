@@ -150,7 +150,7 @@ namespace HocTiengAnh
         private void btnAccount_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DanhSachKetQua dskq = new DanhSachKetQua(tenTK);
+            DanhSachKetQua dskq = new DanhSachKetQua(Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan);
             dskq.ShowDialog();
             this.Close();
         }

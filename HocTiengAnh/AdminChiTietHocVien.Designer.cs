@@ -32,20 +32,20 @@ namespace HocTiengAnh
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminChiTietHocVien));
             this.lblDSHocVien = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lblTenHocVien = new System.Windows.Forms.Label();
-            this.lblMaHocVien = new System.Windows.Forms.Label();
-            this.txtMaHocVien = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.btnDSKhoaHoc = new System.Windows.Forms.Button();
-            this.btnDSBaiHoc = new System.Windows.Forms.Button();
             this.btnDSHocVien = new System.Windows.Forms.Button();
-            this.btnAccount = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTenHocVien = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.dgvKetQuaHocVien = new System.Windows.Forms.DataGridView();
+            this.btnDSBaiHoc = new System.Windows.Forms.Button();
+            this.btnDSKhoaHoc = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
+            this.dgvKetQuaHocVien = new System.Windows.Forms.DataGridView();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtMaHocVien = new System.Windows.Forms.TextBox();
+            this.lblMaHocVien = new System.Windows.Forms.Label();
+            this.txtTenHocVien = new System.Windows.Forms.TextBox();
+            this.lblTenHocVien = new System.Windows.Forms.Label();
+            this.btnAccount = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -95,67 +95,19 @@ namespace HocTiengAnh
             this.splitContainer1.SplitterDistance = 204;
             this.splitContainer1.TabIndex = 2;
             // 
-            // lblTenHocVien
+            // btnDSHocVien
             // 
-            this.lblTenHocVien.AutoSize = true;
-            this.lblTenHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenHocVien.Location = new System.Drawing.Point(325, 64);
-            this.lblTenHocVien.Name = "lblTenHocVien";
-            this.lblTenHocVien.Size = new System.Drawing.Size(109, 20);
-            this.lblTenHocVien.TabIndex = 13;
-            this.lblTenHocVien.Text = "Tên học viên:";
-            // 
-            // lblMaHocVien
-            // 
-            this.lblMaHocVien.AutoSize = true;
-            this.lblMaHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaHocVien.Location = new System.Drawing.Point(21, 67);
-            this.lblMaHocVien.Name = "lblMaHocVien";
-            this.lblMaHocVien.Size = new System.Drawing.Size(109, 20);
-            this.lblMaHocVien.TabIndex = 15;
-            this.lblMaHocVien.Text = "Tên học viên:";
-            // 
-            // txtMaHocVien
-            // 
-            this.txtMaHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHocVien.Location = new System.Drawing.Point(144, 64);
-            this.txtMaHocVien.Name = "txtMaHocVien";
-            this.txtMaHocVien.Size = new System.Drawing.Size(35, 27);
-            this.txtMaHocVien.TabIndex = 16;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(21, 96);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(56, 20);
-            this.lblEmail.TabIndex = 17;
-            this.lblEmail.Text = "Email:";
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(325, 99);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(82, 20);
-            this.lblPassword.TabIndex = 19;
-            this.lblPassword.Text = "Mật khẩu:";
-            // 
-            // btnDSKhoaHoc
-            // 
-            this.btnDSKhoaHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnDSHocVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDSKhoaHoc.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDSKhoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDSKhoaHoc.Location = new System.Drawing.Point(12, 43);
-            this.btnDSKhoaHoc.Name = "btnDSKhoaHoc";
-            this.btnDSKhoaHoc.Size = new System.Drawing.Size(179, 64);
-            this.btnDSKhoaHoc.TabIndex = 0;
-            this.btnDSKhoaHoc.Text = "KHÓA HỌC";
-            this.btnDSKhoaHoc.UseVisualStyleBackColor = false;
+            this.btnDSHocVien.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDSHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDSHocVien.Location = new System.Drawing.Point(12, 207);
+            this.btnDSHocVien.Name = "btnDSHocVien";
+            this.btnDSHocVien.Size = new System.Drawing.Size(179, 64);
+            this.btnDSHocVien.TabIndex = 2;
+            this.btnDSHocVien.Text = "HỌC VIÊN";
+            this.btnDSHocVien.UseVisualStyleBackColor = false;
             // 
             // btnDSBaiHoc
             // 
@@ -171,19 +123,112 @@ namespace HocTiengAnh
             this.btnDSBaiHoc.Text = "BÀI HỌC";
             this.btnDSBaiHoc.UseVisualStyleBackColor = false;
             // 
-            // btnDSHocVien
+            // btnDSKhoaHoc
             // 
-            this.btnDSHocVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnDSKhoaHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDSHocVien.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDSHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDSHocVien.Location = new System.Drawing.Point(12, 207);
-            this.btnDSHocVien.Name = "btnDSHocVien";
-            this.btnDSHocVien.Size = new System.Drawing.Size(179, 64);
-            this.btnDSHocVien.TabIndex = 2;
-            this.btnDSHocVien.Text = "HỌC VIÊN";
-            this.btnDSHocVien.UseVisualStyleBackColor = false;
+            this.btnDSKhoaHoc.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDSKhoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDSKhoaHoc.Location = new System.Drawing.Point(12, 43);
+            this.btnDSKhoaHoc.Name = "btnDSKhoaHoc";
+            this.btnDSKhoaHoc.Size = new System.Drawing.Size(179, 64);
+            this.btnDSKhoaHoc.TabIndex = 0;
+            this.btnDSKhoaHoc.Text = "KHÓA HỌC";
+            this.btnDSKhoaHoc.UseVisualStyleBackColor = false;
+            // 
+            // btnIn
+            // 
+            this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Location = new System.Drawing.Point(509, 408);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(115, 52);
+            this.btnIn.TabIndex = 24;
+            this.btnIn.Text = "In";
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
+            // dgvKetQuaHocVien
+            // 
+            this.dgvKetQuaHocVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKetQuaHocVien.Location = new System.Drawing.Point(24, 129);
+            this.dgvKetQuaHocVien.Name = "dgvKetQuaHocVien";
+            this.dgvKetQuaHocVien.RowHeadersWidth = 51;
+            this.dgvKetQuaHocVien.RowTemplate.Height = 24;
+            this.dgvKetQuaHocVien.Size = new System.Drawing.Size(599, 267);
+            this.dgvKetQuaHocVien.TabIndex = 21;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(448, 96);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(175, 27);
+            this.txtPassword.TabIndex = 20;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(325, 99);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(82, 20);
+            this.lblPassword.TabIndex = 19;
+            this.lblPassword.Text = "Mật khẩu:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(91, 93);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(175, 27);
+            this.txtEmail.TabIndex = 18;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(21, 96);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(56, 20);
+            this.lblEmail.TabIndex = 17;
+            this.lblEmail.Text = "Email:";
+            // 
+            // txtMaHocVien
+            // 
+            this.txtMaHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHocVien.Location = new System.Drawing.Point(144, 64);
+            this.txtMaHocVien.Name = "txtMaHocVien";
+            this.txtMaHocVien.Size = new System.Drawing.Size(35, 27);
+            this.txtMaHocVien.TabIndex = 16;
+            // 
+            // lblMaHocVien
+            // 
+            this.lblMaHocVien.AutoSize = true;
+            this.lblMaHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaHocVien.Location = new System.Drawing.Point(21, 67);
+            this.lblMaHocVien.Name = "lblMaHocVien";
+            this.lblMaHocVien.Size = new System.Drawing.Size(109, 20);
+            this.lblMaHocVien.TabIndex = 15;
+            this.lblMaHocVien.Text = "Tên học viên:";
+            // 
+            // txtTenHocVien
+            // 
+            this.txtTenHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenHocVien.Location = new System.Drawing.Point(448, 61);
+            this.txtTenHocVien.Name = "txtTenHocVien";
+            this.txtTenHocVien.Size = new System.Drawing.Size(175, 27);
+            this.txtTenHocVien.TabIndex = 14;
+            // 
+            // lblTenHocVien
+            // 
+            this.lblTenHocVien.AutoSize = true;
+            this.lblTenHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenHocVien.Location = new System.Drawing.Point(325, 64);
+            this.lblTenHocVien.Name = "lblTenHocVien";
+            this.lblTenHocVien.Size = new System.Drawing.Size(109, 20);
+            this.lblTenHocVien.TabIndex = 13;
+            this.lblTenHocVien.Text = "Tên học viên:";
             // 
             // btnAccount
             // 
@@ -201,50 +246,6 @@ namespace HocTiengAnh
             this.btnAccount.Text = "ADMIN";
             this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAccount.UseVisualStyleBackColor = false;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(91, 93);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(175, 27);
-            this.txtEmail.TabIndex = 18;
-            // 
-            // txtTenHocVien
-            // 
-            this.txtTenHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenHocVien.Location = new System.Drawing.Point(448, 61);
-            this.txtTenHocVien.Name = "txtTenHocVien";
-            this.txtTenHocVien.Size = new System.Drawing.Size(175, 27);
-            this.txtTenHocVien.TabIndex = 14;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(448, 96);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(175, 27);
-            this.txtPassword.TabIndex = 20;
-            // 
-            // dgvKetQuaHocVien
-            // 
-            this.dgvKetQuaHocVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKetQuaHocVien.Location = new System.Drawing.Point(24, 129);
-            this.dgvKetQuaHocVien.Name = "dgvKetQuaHocVien";
-            this.dgvKetQuaHocVien.RowHeadersWidth = 51;
-            this.dgvKetQuaHocVien.RowTemplate.Height = 24;
-            this.dgvKetQuaHocVien.Size = new System.Drawing.Size(599, 267);
-            this.dgvKetQuaHocVien.TabIndex = 21;
-            // 
-            // btnIn
-            // 
-            this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIn.Location = new System.Drawing.Point(509, 408);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(115, 52);
-            this.btnIn.TabIndex = 24;
-            this.btnIn.Text = "In";
-            this.btnIn.UseVisualStyleBackColor = true;
             // 
             // AdminChiTietHocVien
             // 
