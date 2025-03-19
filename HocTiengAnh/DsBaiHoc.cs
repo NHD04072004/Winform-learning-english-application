@@ -63,9 +63,7 @@ namespace HocTiengAnh
                             }
                         }
                     }
-
                 }
-                
             }
             catch (Exception ex)
             {
@@ -121,31 +119,29 @@ namespace HocTiengAnh
                 {
                     MessageBox.Show("Lỗi khi tải danh sách bài học: " + ex.Message);
                 }
-
-
             }
-
         }
 
         private void BtnBaiHoc_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
-            //string maBaiHoc = clickedButton.Tag.ToString();
-
-            
-            //DsCauHoi ch = new DsCauHoi(maBaiHoc);
-            //ch.Show();
+            string maKhoaHoc = clickedButton.Tag.ToString();
+            Question q = new Question(maKhoaHoc);
+            q.ShowDialog();
+            this.Hide();
         }
 
         private void btnDSKHoaHoc_Click(object sender, EventArgs e)
         {
-
+            DsKhoaHoc dskh = new DsKhoaHoc(tenTK);
+            dskh.ShowDialog();
+            this.Hide();
             
         }
 
         private void btnDSKH_user_Click(object sender, EventArgs e)
         {
-            Button clickedButton = sender as Button;
+            this.Refresh();
             
         }
 
