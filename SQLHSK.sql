@@ -62,7 +62,7 @@ CREATE TABLE [dbo].[tblBangKetQua] (
     [sMaKetQua]    VARCHAR (10) NOT NULL,
     [iMaTK]        INT NOT NULL,
     [sMaBaiHoc]    VARCHAR (10) NOT NULL,
-    [dThoiGianNop] DATETIME     NOT NULL,
+    [dThoiGianNop] DATETIME     NULL,
     [fDiem]        FLOAT CHECK(fDiem BETWEEN 0 AND 10) DEFAULT(0),
     CONSTRAINT [PK_tblBangKetQua] PRIMARY KEY CLUSTERED ([sMaKetQua] ASC),
     CONSTRAINT [FK_tblBangKetQua_tblBaiHoc] FOREIGN KEY ([sMaBaiHoc]) REFERENCES [dbo].[tblBaiHoc] ([sMaBaiHoc]),
