@@ -36,7 +36,7 @@ namespace HocTiengAnh
 
         private void btnDSKH_user_Click(object sender, EventArgs e)
         {
-            DsBaiHoc dsbh = new DsBaiHoc(tenTK);
+            DsBaiHoc dsbh = new DsBaiHoc();
             dsbh.ShowDialog();
         }
 
