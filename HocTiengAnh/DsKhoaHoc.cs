@@ -201,7 +201,7 @@ namespace HocTiengAnh
 
         private void btnDSKH_user_Click(object sender, EventArgs e)
         {
-            DsBaiHoc ds = new DsBaiHoc(tenTK);
+            DsBaiHoc ds = new DsBaiHoc();
             ds.ShowDialog();
             this.Hide();
         }

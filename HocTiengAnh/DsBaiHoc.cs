@@ -16,12 +16,10 @@ namespace HocTiengAnh
     public partial class DsBaiHoc : Form
     {
         private string str = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
-        private string tenTK;
 
-        public DsBaiHoc(string tenTK)
+        public DsBaiHoc()
         {
             InitializeComponent();
-            this.tenTK = tenTK;
             LoadKhoaHoc();
         }
         private void LoadKhoaHoc()
@@ -40,7 +38,7 @@ namespace HocTiengAnh
                         cmd.Connection = conn;
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.CommandText = "dskhcb";
-                        cmd.Parameters.AddWithValue("@tenTK", tenTK);
+                        cmd.Parameters.AddWithValue("@maTK", Adapter.SessionManager.Instance.CurrentAccount.MaTaiKhoan);
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
@@ -125,15 +123,15 @@ namespace HocTiengAnh
         private void BtnBaiHoc_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
-            string maKhoaHoc = clickedButton.Tag.ToString();
-            Question q = new Question(maKhoaHoc);
+            string maBaiHoc = clickedButton.Tag.ToString();
+            Question q = new Question(maBaiHoc);
             q.ShowDialog();
             this.Hide();
         }
 
         private void btnDSKHoaHoc_Click(object sender, EventArgs e)
         {
-            DsKhoaHoc dskh = new DsKhoaHoc(tenTK);
+            DsKhoaHoc dskh = new DsKhoaHoc(Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan);
             dskh.ShowDialog();
             this.Hide();
             
@@ -147,7 +145,7 @@ namespace HocTiengAnh
 
         private void DsBaiHoc_Load(object sender, EventArgs e)
         {
-            btnAccount.Text = tenTK;
+            btnAccount.Text = Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan;
         }
     }
 }

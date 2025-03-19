@@ -35,7 +35,7 @@ namespace HocTiengAnh
             MaKetQua = adapter.autoGenerateMaKetQua();
 
             Account account = new Account();
-            int MaTaiKhoan = 2;
+            int MaTaiKhoan = Adapter.SessionManager.Instance.CurrentAccount.MaTaiKhoan;
 
           
             adapter.CreateResult(MaTaiKhoan.ToString(), MaBaiHoc);
@@ -43,7 +43,7 @@ namespace HocTiengAnh
         }
         public void LoadQuestion()
         {
-            listQuestion = adapter.LoadQuestion("BH001");
+            listQuestion = adapter.LoadQuestion(MaBaiHoc);
             displayQuestion();
         }
 

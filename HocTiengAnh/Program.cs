@@ -16,7 +16,7 @@ namespace HocTiengAnh
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminKhoaHoc());
+            Application.Run(new Dangnhap());
         }
     }
 }

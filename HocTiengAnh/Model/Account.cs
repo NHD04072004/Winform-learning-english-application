@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HocTiengAnh.Model
 {
-    class Account
+    public class Account
     {
         public int MaTaiKhoan { get; set; }
         public string TenTaiKhoan { get; set; }
