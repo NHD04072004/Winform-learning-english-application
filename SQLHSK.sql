@@ -597,7 +597,13 @@ begin
 end
 GO
 
-
+create proc pr_countSoKetQua
+  @MaTK INT
+  as
+  BEGIN
+    select count(sMaKetQua) from tblBangKetQua
+    where tblBangKetQua.iMaTK = @MaTK 
+    end
 
 -- của toản
 CREATE PROC check_login

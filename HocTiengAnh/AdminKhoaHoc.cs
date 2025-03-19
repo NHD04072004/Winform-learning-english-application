@@ -183,8 +183,9 @@ namespace HocTiengAnh
                                 DateTime now = DateTime.Now;
                                 if ((now - lastClickTime).TotalMilliseconds <= SystemInformation.DoubleClickTime)
                                 {
+                                    this.Hide();
                                     AdminBaiHoc adminBaiHoc = new AdminBaiHoc(maKhoaHoc);
-                                    adminBaiHoc.Show();
+                                    adminBaiHoc.ShowDialog();
                                 }
                                 lastClickTime = now;
                             };

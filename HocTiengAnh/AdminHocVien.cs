@@ -99,7 +99,7 @@ namespace HocTiengAnh
                                 {
                                     this.Hide();
                                     AdminChiTietHocVien adminChiTietHocVien = new AdminChiTietHocVien(maTK, tenTK, email, password);
-                                    adminChiTietHocVien.Show();
+                                    adminChiTietHocVien.ShowDialog();
                                 }
                                 lastClickTime = now;
                             };
