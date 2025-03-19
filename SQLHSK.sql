@@ -721,3 +721,14 @@ BEGIN
 	  AND tblTaiKhoan.sTenTK = @tentk
 	  AND tblBaiHoc.sTenBaiHoc = @tenBaiHoc
 END
+
+
+create proc pr_init_account
+@stentk varchar(50),
+@smatkhau VARCHAR(50)
+AS
+    BEGIN
+        select * from tblTaiKhoan
+        where sTenTK like @stentk
+        and sMatKhau like @smatkhau
+    END
