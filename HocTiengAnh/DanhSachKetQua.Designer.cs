@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DanhSachKetQua));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnTrangchu = new System.Windows.Forms.Button();
             this.btnDangxuat = new System.Windows.Forms.Button();
-            this.btnKhoaHoc = new System.Windows.Forms.Button();
             this.btnHiennguoidung = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBaihoc4 = new System.Windows.Forms.Button();
@@ -44,7 +44,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvKetquabailam = new System.Windows.Forms.DataGridView();
-            this.btnTrangchu = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -59,12 +58,23 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.btnTrangchu);
             this.panel3.Controls.Add(this.btnDangxuat);
-            this.panel3.Controls.Add(this.btnKhoaHoc);
             this.panel3.Controls.Add(this.btnHiennguoidung);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(220, 556);
             this.panel3.TabIndex = 1;
+            // 
+            // btnTrangchu
+            // 
+            this.btnTrangchu.BackColor = System.Drawing.Color.Silver;
+            this.btnTrangchu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrangchu.Location = new System.Drawing.Point(3, 329);
+            this.btnTrangchu.Name = "btnTrangchu";
+            this.btnTrangchu.Size = new System.Drawing.Size(210, 71);
+            this.btnTrangchu.TabIndex = 7;
+            this.btnTrangchu.Text = "Trang chủ";
+            this.btnTrangchu.UseVisualStyleBackColor = false;
+            this.btnTrangchu.Click += new System.EventHandler(this.btnTrangchu_Click);
             // 
             // btnDangxuat
             // 
@@ -77,18 +87,6 @@
             this.btnDangxuat.Text = "Đăng xuất";
             this.btnDangxuat.UseVisualStyleBackColor = false;
             this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
-            // 
-            // btnKhoaHoc
-            // 
-            this.btnKhoaHoc.BackColor = System.Drawing.Color.Silver;
-            this.btnKhoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhoaHoc.Location = new System.Drawing.Point(3, 83);
-            this.btnKhoaHoc.Name = "btnKhoaHoc";
-            this.btnKhoaHoc.Size = new System.Drawing.Size(210, 71);
-            this.btnKhoaHoc.TabIndex = 5;
-            this.btnKhoaHoc.Text = "KHÓA HỌC";
-            this.btnKhoaHoc.UseVisualStyleBackColor = false;
-            this.btnKhoaHoc.Click += new System.EventHandler(this.btnKhoaHoc_Click);
             // 
             // btnHiennguoidung
             // 
@@ -231,18 +229,6 @@
             this.dgvKetquabailam.TabIndex = 3;
             this.dgvKetquabailam.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKetquabailam_CellContentClick);
             // 
-            // btnTrangchu
-            // 
-            this.btnTrangchu.BackColor = System.Drawing.Color.Silver;
-            this.btnTrangchu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrangchu.Location = new System.Drawing.Point(3, 329);
-            this.btnTrangchu.Name = "btnTrangchu";
-            this.btnTrangchu.Size = new System.Drawing.Size(210, 71);
-            this.btnTrangchu.TabIndex = 7;
-            this.btnTrangchu.Text = "Trang chủ";
-            this.btnTrangchu.UseVisualStyleBackColor = false;
-            this.btnTrangchu.Click += new System.EventHandler(this.btnTrangchu_Click);
-            // 
             // DanhSachKetQua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -272,7 +258,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button btnKhoaHoc;
         private System.Windows.Forms.Button btnHiennguoidung;
         private System.Windows.Forms.DataGridView dgvKetquabailam;
         private System.Windows.Forms.Label label1;

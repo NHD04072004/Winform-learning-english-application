@@ -201,6 +201,7 @@ namespace HocTiengAnh
 
         private void btnDSKH_user_Click(object sender, EventArgs e)
         {
+            this.Hide();
             DsBaiHoc ds = new DsBaiHoc();
             ds.ShowDialog();
         }
@@ -210,7 +211,6 @@ namespace HocTiengAnh
             this.Hide();
             DanhSachKetQua dskq = new DanhSachKetQua(tenTK);
             dskq.ShowDialog();
-            this.Close();
         }
     }
 }

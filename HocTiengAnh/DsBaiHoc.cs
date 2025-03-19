@@ -131,6 +131,7 @@ namespace HocTiengAnh
 
         private void btnDSKHoaHoc_Click(object sender, EventArgs e)
         {
+            this.Hide();
             DsKhoaHoc dskh = new DsKhoaHoc(Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan);
             dskh.ShowDialog();
             
