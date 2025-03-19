@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DanhSachKetQua));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDangxuat = new System.Windows.Forms.Button();
             this.btnKhoaHoc = new System.Windows.Forms.Button();
             this.btnHiennguoidung = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,7 +44,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvKetquabailam = new System.Windows.Forms.DataGridView();
-            this.btnDangxuat = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -63,6 +64,18 @@
             this.panel3.Size = new System.Drawing.Size(220, 556);
             this.panel3.TabIndex = 1;
             // 
+            // btnDangxuat
+            // 
+            this.btnDangxuat.BackColor = System.Drawing.Color.Silver;
+            this.btnDangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangxuat.Location = new System.Drawing.Point(3, 406);
+            this.btnDangxuat.Name = "btnDangxuat";
+            this.btnDangxuat.Size = new System.Drawing.Size(210, 71);
+            this.btnDangxuat.TabIndex = 6;
+            this.btnDangxuat.Text = "Đăng xuất";
+            this.btnDangxuat.UseVisualStyleBackColor = false;
+            this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
+            // 
             // btnKhoaHoc
             // 
             this.btnKhoaHoc.BackColor = System.Drawing.Color.Silver;
@@ -73,11 +86,13 @@
             this.btnKhoaHoc.TabIndex = 5;
             this.btnKhoaHoc.Text = "KHÓA HỌC";
             this.btnKhoaHoc.UseVisualStyleBackColor = false;
+            this.btnKhoaHoc.Click += new System.EventHandler(this.btnKhoaHoc_Click);
             // 
             // btnHiennguoidung
             // 
             this.btnHiennguoidung.BackColor = System.Drawing.Color.Silver;
             this.btnHiennguoidung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHiennguoidung.Image = ((System.Drawing.Image)(resources.GetObject("btnHiennguoidung.Image")));
             this.btnHiennguoidung.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHiennguoidung.Location = new System.Drawing.Point(3, 483);
             this.btnHiennguoidung.Name = "btnHiennguoidung";
@@ -213,18 +228,6 @@
             this.dgvKetquabailam.Size = new System.Drawing.Size(777, 313);
             this.dgvKetquabailam.TabIndex = 3;
             this.dgvKetquabailam.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKetquabailam_CellContentClick);
-            // 
-            // btnDangxuat
-            // 
-            this.btnDangxuat.BackColor = System.Drawing.Color.Silver;
-            this.btnDangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangxuat.Location = new System.Drawing.Point(3, 406);
-            this.btnDangxuat.Name = "btnDangxuat";
-            this.btnDangxuat.Size = new System.Drawing.Size(210, 71);
-            this.btnDangxuat.TabIndex = 6;
-            this.btnDangxuat.Text = "Đăng xuất";
-            this.btnDangxuat.UseVisualStyleBackColor = false;
-            this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
             // 
             // DanhSachKetQua
             // 

@@ -516,3 +516,208 @@ BEGIN
 END;
 
 exec dskhcb 'johndoe';
+
+CREATE PROC DSCau_hoi
+(
+	@mabaihoc VARCHAR(10)
+)
+AS
+BEGIN
+	SELECT *  FROM tblCauHoi
+	WHERE sMaBaiHoc = @mabaihoc
+END
+
+exec dbo.DSCau_hoi @mabaihoc = 'BH001';
+
+drop proc DSCau_hoi*/
+
+
+--TRIGGER AND PROC NINH
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TRIGGER [dbo].[tg_sumScore]
+ON [dbo].[tblBangTraLoi]
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    PRINT 'Trigger tg_sumScore đã chạy!';
+    
+    UPDATE bk
+    SET fDiem = ISNULL((
+        SELECT COUNT(tl.sMaTraLoi) * 2
+        FROM tblBangTraLoi tl
+        WHERE tl.sMaKetQua = bk.sMaKetQua
+        AND tl.bDapAnDung = 1
+    ), 0)  -- Nếu kết quả NULL, đặt về 0
+    FROM tblBangKetQua bk
+    JOIN inserted i ON bk.sMaKetQua = i.sMaKetQua;
+END;
+GO
+ALTER TABLE [dbo].[tblBangTraLoi] ENABLE TRIGGER [tg_sumScore]
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[pr_createResult]
+@MaKetQua varchar(10),
+@MaTaiKhoan int,
+@MaBaiHoc varchar(10)
+as
+	insert into tblBangKetQua(sMaKetQua,iMaTK,sMaBaiHoc)
+	values (@MaKetQua, @MaTaiKhoan, @MaBaiHoc)
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[pr_createResultDetail]
+@MaKetQua varchar(10),
+@MaTraLoi varchar(10),
+@MaCauHoi varchar(10),
+@MaDapAnTraLoi varchar(10),
+@DapAnDung bit
+as
+	insert into tblBangTraLoi(sMaTraLoi,sMaKetQua,sMaCauHoi,sMaDapAnTraLoi,bDapAnDung)
+	values (@MaTraLoi,@MaKetQua,@MaCauHoi,@MaDapAnTraLoi,@DapAnDung)
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[pr_finishTest]
+@MaKetQua VARCHAR(10),
+@ThoiGianNop DATETIME
+as
+	UPDATE tblBangKetQua
+    SET dThoiGianNop = @ThoiGianNop
+    WHERE sMaKetQua = @MaKetQua;
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+create proc [dbo].[pr_getResult]
+@MaTK int,
+@MaBaiHoc VARCHAR(10)
+AS
+	select * from tblBangKetQua as kq
+	where kq.iMaTK = @MaTK and kq.sMaBaiHoc LIKE @MaBaiHoc
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[pr_loadQuestion]
+@MaBaiHoc VARCHAR(10)
+as
+begin
+	SELECT * 
+	FROM tblCauHoi
+	JOIN tblDapAn ON tblCauHoi.sMaCauHoi = tblDapAn.sMaCauHoi
+	WHERE tblCauHoi.sMaBaiHoc LIKE @MaBaiHoc
+	ORDER BY tblCauHoi.sMaCauHoi ASC;
+end
+GO
+
+
+
+-- của toản
+CREATE PROC check_login
+(
+	@stentk VARCHAR(50),
+	@smatkhau VARCHAR(50)
+)
+AS
+BEGIN
+	IF NOT EXISTS (SELECT 1 FROM tblTaiKhoan WHERE sTenTK = @stentk)
+	BEGIN
+		SELECT -1 AS ktr, NULL AS bCheckAdmin;
+		RETURN;
+	END
+	
+	DECLARE @bCheckAdmin BIT;
+	
+	IF EXISTS (SELECT 1 FROM tblTaiKhoan WHERE sTenTK = @stentk AND sMatKhau = @smatkhau)
+	BEGIN
+		SELECT @bCheckAdmin = bCheckAdmin FROM tblTaiKhoan WHERE sTenTK = @stentk;
+		SELECT 1 AS ktr, @bCheckAdmin AS bCheckAdmin;
+	END
+	ELSE
+	BEGIN
+		SELECT 0 AS ktr, NULL AS bCheckAdmin;
+	END
+END
+
+
+-- Hàm đăng nhập tài khoản
+CREATE PROC insert_data_login
+(
+	@stentk VARCHAR(50),
+	@semail VARCHAR(MAX),
+	@smatkhau VARCHAR(50)
+)
+AS
+BEGIN
+	INSERT INTO tblTaiKhoan(sTenTK, sEmail, sMatKhau)
+	VALUES (@stentk, @semail, @smatkhau)
+END
+
+------
+CREATE PROC LayBaiHoc
+(
+	@tentk VARCHAR (50)
+)
+AS
+BEGIN
+	SELECT TOP 4 sTenBaiHoc FROM tblBaiHoc, tblBangKetQua, tblTaiKhoan WHERE tblBaiHoc.sMaBaiHoc = tblBangKetQua.sMaBaiHoc AND tblBangKetQua.iMaTK = tblTaiKhoan.iMaTK AND tblTaiKhoan.sTenTK = @tentk
+END
+
+
+------
+CREATE PROC LayKetQuaBaiLam
+(
+	@tentk VARCHAR (50)
+)
+AS
+BEGIN
+	SELECT tblTaiKhoan.sTenTK AS 'Tên tài khoản',
+		tblBaiHoc.sTenBaiHoc AS 'Tên bài học',
+		tblBangKetQua.dThoiGianNop AS 'Thời gian nộp',
+		tblBangKetQua.fDiem AS 'Điểm'
+	FROM tblBaiHoc, tblBangKetQua, tblTaiKhoan
+	WHERE tblBaiHoc.sMaBaiHoc = tblBangKetQua.sMaBaiHoc
+	AND tblBangKetQua.iMaTK = tblTaiKhoan.iMaTK
+	AND tblTaiKhoan.sTenTK = @tentk
+END
+
+
+CREATE PROC LayKetQuaBaiHoc
+(
+	@tentk VARCHAR(50),
+	@tenBaiHoc NVARCHAR(100)
+)
+AS
+BEGIN
+	SELECT tblTaiKhoan.sTenTK AS 'Tên tài khoản', 
+		   tblBaiHoc.sTenBaiHoc AS 'Tên bài học', 
+		   tblBangKetQua.dThoiGianNop AS 'Thời gian nộp', 
+		   tblBangKetQua.fDiem AS 'Điểm'
+	FROM tblBaiHoc, tblBangKetQua, tblTaiKhoan
+	WHERE tblBaiHoc.sMaBaiHoc = tblBangKetQua.sMaBaiHoc 
+	  AND tblBangKetQua.iMaTK = tblTaiKhoan.iMaTK 
+	  AND tblTaiKhoan.sTenTK = @tentk
+	  AND tblBaiHoc.sTenBaiHoc = @tenBaiHoc
+END
