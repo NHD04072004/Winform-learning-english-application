@@ -63,9 +63,9 @@ namespace HocTiengAnh
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            KetQuaHocVien report = new KetQuaHocVien(MaHocVien);
-            report.Show();
             this.Hide();
+            KetQuaHocVien report = new KetQuaHocVien(MaHocVien);
+            report.ShowDialog();
         }
     }
 }
