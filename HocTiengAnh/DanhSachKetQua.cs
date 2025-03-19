@@ -28,8 +28,7 @@ namespace HocTiengAnh
 
         private void btnHiennguoidung_Click(object sender, EventArgs e)
         {
-            //LoadDanhSachBaiHoc();
-            //LoadKetQuaBaiLam();
+            
         }
 
         // Hàm lấy danh sách bài học
