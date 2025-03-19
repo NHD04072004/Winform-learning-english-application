@@ -69,15 +69,9 @@ CREATE TABLE [dbo].[tblBangKetQua] (
     CONSTRAINT [FK_tblBangKetQua_tblBaiHoc] FOREIGN KEY ([sMaBaiHoc]) REFERENCES [dbo].[tblBaiHoc] ([sMaBaiHoc]),
     CONSTRAINT [FK_tblBangKetQua_tblTaiKhoan] FOREIGN KEY ([iMaTK]) REFERENCES [dbo].[tblTaiKhoan] ([iMaTK])
 );
-<<<<<<< HEAD
 
 ALTER TABLE [dbo].[tblBangKetQua] ALTER COLUMN [dThoiGianNop] DATETIME NULL;
 
-
-=======
-ALTER TABLE [dbo].[tblBangKetQua] ALTER COLUMN [dThoiGianNop] DATETIME NULL;
-
->>>>>>> 55589e2019fba63a0c944c1972b5c99fe22c1621
 GO
 CREATE TABLE [dbo].[tblBangTraLoi] (
     [sMaTraLoi]      VARCHAR (10) NOT NULL,
@@ -702,10 +696,7 @@ BEGIN
 	  AND tblBangKetQua.iMaTK = tblTaiKhoan.iMaTK 
 	  AND tblTaiKhoan.sTenTK = @tentk
 	  AND tblBaiHoc.sTenBaiHoc = @tenBaiHoc
-<<<<<<< HEAD
 
-=======
->>>>>>> 55589e2019fba63a0c944c1972b5c99fe22c1621
 END
 
 
@@ -719,9 +710,4 @@ AS
         select * from tblTaiKhoan
         where sTenTK like @stentk
         and sMatKhau like @smatkhau
-<<<<<<< HEAD
     END
-
-=======
-    END
->>>>>>> 55589e2019fba63a0c944c1972b5c99fe22c1621
