@@ -33,7 +33,6 @@ namespace HocTiengAnh
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnDSHocVien = new System.Windows.Forms.Button();
-            this.btnDSBaiHoc = new System.Windows.Forms.Button();
             this.btnDSKhoaHoc = new System.Windows.Forms.Button();
             this.dgvDSKhoaHoc = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -66,7 +65,6 @@ namespace HocTiengAnh
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.splitContainer1.Panel1.Controls.Add(this.btnAccount);
             this.splitContainer1.Panel1.Controls.Add(this.btnDSHocVien);
-            this.splitContainer1.Panel1.Controls.Add(this.btnDSBaiHoc);
             this.splitContainer1.Panel1.Controls.Add(this.btnDSKhoaHoc);
             // 
             // splitContainer1.Panel2
@@ -103,28 +101,13 @@ namespace HocTiengAnh
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDSHocVien.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDSHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDSHocVien.Location = new System.Drawing.Point(12, 207);
+            this.btnDSHocVien.Location = new System.Drawing.Point(12, 126);
             this.btnDSHocVien.Name = "btnDSHocVien";
             this.btnDSHocVien.Size = new System.Drawing.Size(193, 69);
             this.btnDSHocVien.TabIndex = 2;
             this.btnDSHocVien.Text = "HỌC VIÊN";
             this.btnDSHocVien.UseVisualStyleBackColor = false;
             this.btnDSHocVien.Click += new System.EventHandler(this.btnDSHocVien_Click);
-            // 
-            // btnDSBaiHoc
-            // 
-            this.btnDSBaiHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDSBaiHoc.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDSBaiHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDSBaiHoc.Location = new System.Drawing.Point(12, 126);
-            this.btnDSBaiHoc.Name = "btnDSBaiHoc";
-            this.btnDSBaiHoc.Size = new System.Drawing.Size(193, 69);
-            this.btnDSBaiHoc.TabIndex = 1;
-            this.btnDSBaiHoc.Text = "BÀI HỌC";
-            this.btnDSBaiHoc.UseVisualStyleBackColor = false;
-            this.btnDSBaiHoc.Click += new System.EventHandler(this.btnDSBaiHoc_Click);
             // 
             // btnDSKhoaHoc
             // 
@@ -265,7 +248,6 @@ namespace HocTiengAnh
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnDSHocVien;
-        private System.Windows.Forms.Button btnDSBaiHoc;
         private System.Windows.Forms.Button btnDSKhoaHoc;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTongKQ;

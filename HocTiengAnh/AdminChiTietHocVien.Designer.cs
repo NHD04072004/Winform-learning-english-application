@@ -32,8 +32,8 @@ namespace HocTiengAnh
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminChiTietHocVien));
             this.lblDSHocVien = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnAccount = new System.Windows.Forms.Button();
             this.btnDSHocVien = new System.Windows.Forms.Button();
-            this.btnDSBaiHoc = new System.Windows.Forms.Button();
             this.btnDSKhoaHoc = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
             this.dgvKetQuaHocVien = new System.Windows.Forms.DataGridView();
@@ -45,7 +45,6 @@ namespace HocTiengAnh
             this.lblMaHocVien = new System.Windows.Forms.Label();
             this.txtTenHocVien = new System.Windows.Forms.TextBox();
             this.lblTenHocVien = new System.Windows.Forms.Label();
-            this.btnAccount = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -74,7 +73,6 @@ namespace HocTiengAnh
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.splitContainer1.Panel1.Controls.Add(this.btnAccount);
             this.splitContainer1.Panel1.Controls.Add(this.btnDSHocVien);
-            this.splitContainer1.Panel1.Controls.Add(this.btnDSBaiHoc);
             this.splitContainer1.Panel1.Controls.Add(this.btnDSKhoaHoc);
             // 
             // splitContainer1.Panel2
@@ -95,6 +93,23 @@ namespace HocTiengAnh
             this.splitContainer1.SplitterDistance = 204;
             this.splitContainer1.TabIndex = 2;
             // 
+            // btnAccount
+            // 
+            this.btnAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAccount.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAccount.Image")));
+            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAccount.Location = new System.Drawing.Point(4, 392);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(197, 77);
+            this.btnAccount.TabIndex = 3;
+            this.btnAccount.Text = "ADMIN";
+            this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAccount.UseVisualStyleBackColor = false;
+            // 
             // btnDSHocVien
             // 
             this.btnDSHocVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -102,26 +117,12 @@ namespace HocTiengAnh
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDSHocVien.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDSHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDSHocVien.Location = new System.Drawing.Point(12, 207);
+            this.btnDSHocVien.Location = new System.Drawing.Point(12, 129);
             this.btnDSHocVien.Name = "btnDSHocVien";
             this.btnDSHocVien.Size = new System.Drawing.Size(179, 64);
             this.btnDSHocVien.TabIndex = 2;
             this.btnDSHocVien.Text = "HỌC VIÊN";
             this.btnDSHocVien.UseVisualStyleBackColor = false;
-            // 
-            // btnDSBaiHoc
-            // 
-            this.btnDSBaiHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDSBaiHoc.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDSBaiHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDSBaiHoc.Location = new System.Drawing.Point(12, 126);
-            this.btnDSBaiHoc.Name = "btnDSBaiHoc";
-            this.btnDSBaiHoc.Size = new System.Drawing.Size(179, 64);
-            this.btnDSBaiHoc.TabIndex = 1;
-            this.btnDSBaiHoc.Text = "BÀI HỌC";
-            this.btnDSBaiHoc.UseVisualStyleBackColor = false;
             // 
             // btnDSKhoaHoc
             // 
@@ -230,23 +231,6 @@ namespace HocTiengAnh
             this.lblTenHocVien.TabIndex = 13;
             this.lblTenHocVien.Text = "Tên học viên:";
             // 
-            // btnAccount
-            // 
-            this.btnAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAccount.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAccount.Image")));
-            this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAccount.Location = new System.Drawing.Point(4, 392);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(197, 77);
-            this.btnAccount.TabIndex = 3;
-            this.btnAccount.Text = "ADMIN";
-            this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAccount.UseVisualStyleBackColor = false;
-            // 
             // AdminChiTietHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,7 +255,6 @@ namespace HocTiengAnh
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnDSHocVien;
-        private System.Windows.Forms.Button btnDSBaiHoc;
         private System.Windows.Forms.Button btnDSKhoaHoc;
         private System.Windows.Forms.DataGridView dgvKetQuaHocVien;
         private System.Windows.Forms.TextBox txtPassword;
