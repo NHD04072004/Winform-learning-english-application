@@ -44,6 +44,7 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvKetquabailam = new System.Windows.Forms.DataGridView();
+            this.btnTrangchu = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.btnTrangchu);
             this.panel3.Controls.Add(this.btnDangxuat);
             this.panel3.Controls.Add(this.btnKhoaHoc);
             this.panel3.Controls.Add(this.btnHiennguoidung);
@@ -229,6 +231,18 @@
             this.dgvKetquabailam.TabIndex = 3;
             this.dgvKetquabailam.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKetquabailam_CellContentClick);
             // 
+            // btnTrangchu
+            // 
+            this.btnTrangchu.BackColor = System.Drawing.Color.Silver;
+            this.btnTrangchu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrangchu.Location = new System.Drawing.Point(3, 329);
+            this.btnTrangchu.Name = "btnTrangchu";
+            this.btnTrangchu.Size = new System.Drawing.Size(210, 71);
+            this.btnTrangchu.TabIndex = 7;
+            this.btnTrangchu.Text = "Trang chủ";
+            this.btnTrangchu.UseVisualStyleBackColor = false;
+            this.btnTrangchu.Click += new System.EventHandler(this.btnTrangchu_Click);
+            // 
             // DanhSachKetQua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -268,5 +282,6 @@
         private System.Windows.Forms.Button btnBaihoc3;
         private System.Windows.Forms.Button btnBaihoc2;
         private System.Windows.Forms.Button btnDangxuat;
+        private System.Windows.Forms.Button btnTrangchu;
     }
 }

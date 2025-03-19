@@ -31,11 +31,11 @@ namespace HocTiengAnh
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnDSKH_user = new System.Windows.Forms.Button();
             this.btnDSKhoaHoc = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnDangXuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,8 +61,25 @@ namespace HocTiengAnh
             this.splitContainer1.Panel2.Controls.Add(this.lblWelcome);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(908, 475);
-            this.splitContainer1.SplitterDistance = 218;
+            this.splitContainer1.SplitterDistance = 217;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDangXuat.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDangXuat.Location = new System.Drawing.Point(4, 306);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(210, 80);
+            this.btnDangXuat.TabIndex = 4;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnAccount
             // 
@@ -75,11 +92,12 @@ namespace HocTiengAnh
             this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAccount.Location = new System.Drawing.Point(4, 392);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(211, 80);
+            this.btnAccount.Size = new System.Drawing.Size(210, 80);
             this.btnAccount.TabIndex = 3;
             this.btnAccount.Text = "ADMIN";
             this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnDSKH_user
             // 
@@ -90,7 +108,7 @@ namespace HocTiengAnh
             this.btnDSKH_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDSKH_user.Location = new System.Drawing.Point(12, 139);
             this.btnDSKH_user.Name = "btnDSKH_user";
-            this.btnDSKH_user.Size = new System.Drawing.Size(193, 67);
+            this.btnDSKH_user.Size = new System.Drawing.Size(192, 67);
             this.btnDSKH_user.TabIndex = 2;
             this.btnDSKH_user.Text = "KHÓA HỌC CỦA BẠN";
             this.btnDSKH_user.UseVisualStyleBackColor = false;
@@ -105,7 +123,7 @@ namespace HocTiengAnh
             this.btnDSKhoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDSKhoaHoc.Location = new System.Drawing.Point(12, 43);
             this.btnDSKhoaHoc.Name = "btnDSKhoaHoc";
-            this.btnDSKhoaHoc.Size = new System.Drawing.Size(193, 67);
+            this.btnDSKhoaHoc.Size = new System.Drawing.Size(192, 67);
             this.btnDSKhoaHoc.TabIndex = 0;
             this.btnDSKhoaHoc.Text = "KHÓA HỌC";
             this.btnDSKhoaHoc.UseVisualStyleBackColor = false;
@@ -120,23 +138,6 @@ namespace HocTiengAnh
             this.lblWelcome.Size = new System.Drawing.Size(195, 36);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Chào mừng: ";
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDangXuat.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDangXuat.Location = new System.Drawing.Point(4, 306);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(211, 80);
-            this.btnDangXuat.TabIndex = 4;
-            this.btnDangXuat.Text = "Đăng xuất";
-            this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDangXuat.UseVisualStyleBackColor = false;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // TrangChu
             // 

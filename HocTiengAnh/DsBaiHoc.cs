@@ -146,5 +146,13 @@ namespace HocTiengAnh
         {
             btnAccount.Text = Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan;
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DanhSachKetQua dskq = new DanhSachKetQua(tenTK);
+            dskq.ShowDialog();
+            this.Close();
+        }
     }
 }

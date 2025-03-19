@@ -206,5 +206,9 @@ namespace HocTiengAnh
             this.Close();
         }
 
+        private void tbUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

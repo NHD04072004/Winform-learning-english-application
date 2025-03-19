@@ -204,5 +204,13 @@ namespace HocTiengAnh
             DsBaiHoc ds = new DsBaiHoc();
             ds.ShowDialog();
         }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DanhSachKetQua dskq = new DanhSachKetQua(tenTK);
+            dskq.ShowDialog();
+            this.Close();
+        }
     }
 }
