@@ -144,9 +144,9 @@ namespace HocTiengAnh
                 btnNext.Visible = false;
                 MessageBox.Show("Hoàn thành");
                 adapter.FinishTest(MaKetQua, DateTime.Now);
-
+                this.Hide();
                 Result result = new Result(2,MaBaiHoc);
-                result.Show();
+                result.ShowDialog();
             }
             else
             {
