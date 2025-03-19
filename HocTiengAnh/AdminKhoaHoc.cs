@@ -178,9 +178,8 @@ namespace HocTiengAnh
 
                             btnKhoaHoc.DoubleClick += (s, ev) =>
                             {
-                                AdminBaiHoc formAdminBaiHoc = new AdminBaiHoc();
-                                formAdminBaiHoc.Show();
-                                this.Hide();
+                                AdminBaiHoc formAdminBaiHoc = new AdminBaiHoc(maKhoaHoc);
+                                formAdminBaiHoc.ShowDialog();
                             };
 
                             flpDSKhoaHoc.Controls.Add(btnKhoaHoc);
