@@ -72,7 +72,7 @@ namespace HocTiengAnh
         private void btnDSKhoaHoc_Click(object sender, EventArgs e)
         {
             AdminKhoaHoc adminKhoaHocForm = new AdminKhoaHoc();
-            adminKhoaHocForm.Show();
+            adminKhoaHocForm.ShowDialog();
             this.Hide();
         }
 
