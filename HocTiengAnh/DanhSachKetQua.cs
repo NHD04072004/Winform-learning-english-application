@@ -141,7 +141,6 @@ namespace HocTiengAnh
             this.Hide();
             Dangnhap dangnhap = new Dangnhap();
             dangnhap.ShowDialog();
-            this.Close();
         }
 
         private void btnKhoaHoc_Click(object sender, EventArgs e)
@@ -155,7 +154,7 @@ namespace HocTiengAnh
         private void btnTrangchu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TrangChu trangChu = new TrangChu(_hienNguoiDung);
+            TrangChu trangChu = new TrangChu();
             trangChu.ShowDialog();
             this.Close();
         }

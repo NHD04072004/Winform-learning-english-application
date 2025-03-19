@@ -354,8 +354,6 @@ begin
 	insert into tblKhoaHoc(sMaKhoaHoc, sTenKhoaHoc)
 	values(@sMaKhoaHoc, @sTenKhoaHoc)
 end;
-drop proc pr_AddCourse
-exec pr_AddCourse 'KH004', N'Siêu tiếng anh';
 
 create proc pr_AddCourseWithExistID
 	@sMaKhoaHoc varchar(10),
@@ -396,8 +394,6 @@ begin
     PRINT N'Xóa khóa học thành công.';
 end
 
-exec pr_DeleteCourse 'KH003';
-
 create proc pr_SuaCourse
 	@sMaKhoaHoc varchar(10),
 	@sTenKhoaHoc nvarchar(max)
@@ -407,8 +403,6 @@ begin
 	set sTenKhoaHoc = @sTenKhoaHoc
 	where sMaKhoaHoc = @sMaKhoaHoc;
 end;
-
-exec pr_SuaCourse 'KH005', N'Tiếng anh chém gió'
 
 CREATE PROCEDURE pr_DeleteBaiHoc
     @sMaBaiHoc VARCHAR(10)
@@ -491,7 +485,6 @@ BEGIN
         AND kh.bIsDeleted = 0;
 END;
 
-exec dskhcb 'johndoe';
 
 CREATE PROC DSCau_hoi
 (
@@ -502,10 +495,6 @@ BEGIN
 	SELECT *  FROM tblCauHoi
 	WHERE sMaBaiHoc = @mabaihoc
 END
-
-exec dbo.DSCau_hoi @mabaihoc = 'BH001';
-
-drop proc DSCau_hoi*/
 
 
 --TRIGGER AND PROC NINH
