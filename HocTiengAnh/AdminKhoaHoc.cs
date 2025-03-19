@@ -19,6 +19,8 @@ namespace HocTiengAnh
             InitializeComponent();
         }
         private string connectString = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
+        private DateTime lastClickTime = DateTime.MinValue;
+
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -176,10 +178,15 @@ namespace HocTiengAnh
                                 txtTenKhoaHoc.Text = tenKhoaHoc;
                             };
 
-                            btnKhoaHoc.DoubleClick += (s, ev) =>
+                            btnKhoaHoc.Click += (s, ev) =>
                             {
-                                AdminBaiHoc formAdminBaiHoc = new AdminBaiHoc(maKhoaHoc);
-                                formAdminBaiHoc.ShowDialog();
+                                DateTime now = DateTime.Now;
+                                if ((now - lastClickTime).TotalMilliseconds <= SystemInformation.DoubleClickTime)
+                                {
+                                    AdminBaiHoc adminBaiHoc = new AdminBaiHoc(maKhoaHoc);
+                                    adminBaiHoc.Show();
+                                }
+                                lastClickTime = now;
                             };
 
                             flpDSKhoaHoc.Controls.Add(btnKhoaHoc);

@@ -35,6 +35,7 @@ namespace HocTiengAnh
             DataTable dt = GetData(MaTaiKhoan);
             reportDocument.SetDataSource(dt);
 
+
             crpKetQuaHocVien.ReportSource = reportDocument;
             crpKetQuaHocVien.Refresh();
         }
