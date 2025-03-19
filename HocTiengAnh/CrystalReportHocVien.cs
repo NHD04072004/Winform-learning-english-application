@@ -29,7 +29,7 @@ namespace HocTiengAnh
             ReportDocument reportDocument = new ReportDocument();
 
             //AE thay duong dan ben may ae
-            string reportPath = "D:/NinhCode/HSK/HocTiengAnh/crpKetQuaHocVien.rpt";
+            string reportPath = "D:/test/C Sharp/baitaplon/HocTiengAnh/HocTiengAnh/crpKetQuaHocVien.rpt";
             reportDocument.Load(reportPath);
 
             DataTable dt = GetData(MaTaiKhoan);

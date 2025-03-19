@@ -97,6 +97,7 @@ namespace HocTiengAnh
                                 DateTime now = DateTime.Now;
                                 if ((now - lastClickTime).TotalMilliseconds <= SystemInformation.DoubleClickTime)
                                 {
+                                    this.Hide();
                                     AdminChiTietHocVien adminChiTietHocVien = new AdminChiTietHocVien(maTK, tenTK, email, password);
                                     adminChiTietHocVien.Show();
                                 }
