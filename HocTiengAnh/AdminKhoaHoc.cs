@@ -31,16 +31,16 @@ namespace HocTiengAnh
 
         private void btnDSBaiHoc_Click(object sender, EventArgs e)
         {
-            AdminBaiHoc adminBaiHocForm = new AdminBaiHoc();
-            adminBaiHocForm.Show();
             this.Hide();
+            AdminBaiHoc adminBaiHocForm = new AdminBaiHoc();
+            adminBaiHocForm.ShowDialog();
         }
 
         private void btnDSHocVien_Click(object sender, EventArgs e)
         {
-            AdminHocVien adminHocVienForm = new AdminHocVien();
-            adminHocVienForm.Show();
             this.Hide();
+            AdminHocVien adminHocVienForm = new AdminHocVien();
+            adminHocVienForm.ShowDialog();
         }
         
         private void AdminKhoaHoc_Load(object sender, EventArgs e)
@@ -178,9 +178,8 @@ namespace HocTiengAnh
 
                             btnKhoaHoc.DoubleClick += (s, ev) =>
                             {
-                                AdminBaiHoc formAdminBaiHoc = new AdminBaiHoc();
-                                formAdminBaiHoc.Show();
-                                this.Hide();
+                                AdminBaiHoc formAdminBaiHoc = new AdminBaiHoc(maKhoaHoc);
+                                formAdminBaiHoc.ShowDialog();
                             };
 
                             flpDSKhoaHoc.Controls.Add(btnKhoaHoc);

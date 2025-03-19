@@ -133,7 +133,6 @@ namespace HocTiengAnh
         {
             DsKhoaHoc dskh = new DsKhoaHoc(Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan);
             dskh.ShowDialog();
-            this.Hide();
             
         }
 

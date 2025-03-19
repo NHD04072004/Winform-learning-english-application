@@ -62,12 +62,21 @@ CREATE TABLE [dbo].[tblBangKetQua] (
     [sMaKetQua]    VARCHAR (10) NOT NULL,
     [iMaTK]        INT NOT NULL,
     [sMaBaiHoc]    VARCHAR (10) NOT NULL,
+<<<<<<< HEAD
+    [dThoiGianNop] DATETIME     NOT NULL,
+=======
     [dThoiGianNop] DATETIME     NULL,
+>>>>>>> b4f5611495ff426a544724099bab4e6dec855ec5
     [fDiem]        FLOAT CHECK(fDiem BETWEEN 0 AND 10) DEFAULT(0),
     CONSTRAINT [PK_tblBangKetQua] PRIMARY KEY CLUSTERED ([sMaKetQua] ASC),
     CONSTRAINT [FK_tblBangKetQua_tblBaiHoc] FOREIGN KEY ([sMaBaiHoc]) REFERENCES [dbo].[tblBaiHoc] ([sMaBaiHoc]),
     CONSTRAINT [FK_tblBangKetQua_tblTaiKhoan] FOREIGN KEY ([iMaTK]) REFERENCES [dbo].[tblTaiKhoan] ([iMaTK])
 );
+<<<<<<< HEAD
+ALTER TABLE [dbo].[tblBangKetQua] ALTER COLUMN [dThoiGianNop] DATETIME NULL;
+
+=======
+>>>>>>> b4f5611495ff426a544724099bab4e6dec855ec5
 GO
 CREATE TABLE [dbo].[tblBangTraLoi] (
     [sMaTraLoi]      VARCHAR (10) NOT NULL,
@@ -720,4 +729,19 @@ BEGIN
 	  AND tblBangKetQua.iMaTK = tblTaiKhoan.iMaTK 
 	  AND tblTaiKhoan.sTenTK = @tentk
 	  AND tblBaiHoc.sTenBaiHoc = @tenBaiHoc
+<<<<<<< HEAD
 END
+=======
+END
+
+
+create proc pr_init_account
+@stentk varchar(50),
+@smatkhau VARCHAR(50)
+AS
+    BEGIN
+        select * from tblTaiKhoan
+        where sTenTK like @stentk
+        and sMatKhau like @smatkhau
+    END
+>>>>>>> b4f5611495ff426a544724099bab4e6dec855ec5

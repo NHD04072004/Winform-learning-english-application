@@ -32,26 +32,19 @@ namespace HocTiengAnh
         {
             DsKhoaHoc dskh = new DsKhoaHoc(Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan);
             dskh.ShowDialog();
-            this.Hide();
         }
 
         private void btnDSKH_user_Click(object sender, EventArgs e)
         {
-            DsBaiHoc dsbh = new DsBaiHoc();
+            DsBaiHoc dsbh = new DsBaiHoc(tenTK);
             dsbh.ShowDialog();
-            this.Hide();
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            Adapter.SessionManager.Instance.Logout();
-            if(Adapter.SessionManager.Instance.CurrentAccount == null)
-            {
-                btnAccount.Text = "Sign in";
-                Dangnhap dangnhap = new Dangnhap();
-                dangnhap.Show();
-                
-            }
+            Dangnhap login = new Dangnhap();
+            login.ShowDialog();
+            this.Hide();
         }
     }
 }

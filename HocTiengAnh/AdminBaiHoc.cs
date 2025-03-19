@@ -19,7 +19,11 @@ namespace HocTiengAnh
         public AdminBaiHoc()
         {
             InitializeComponent();
-            //this.maKhoaHoc = maKhoaHoc;
+        }
+        public AdminBaiHoc(string maKhoaHoc)
+        {
+            InitializeComponent();
+            this.maKhoaHoc = maKhoaHoc;
 
         }
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -29,9 +33,9 @@ namespace HocTiengAnh
 
         private void btnDSKhoaHoc_Click(object sender, EventArgs e)
         {
-            AdminKhoaHoc adminKhoaHocForm = new AdminKhoaHoc();
-            adminKhoaHocForm.Show();
             this.Hide();
+            AdminKhoaHoc adminKhoaHocForm = new AdminKhoaHoc();
+            adminKhoaHocForm.ShowDialog();
         }
 
         private void btnDSBaiHoc_Click(object sender, EventArgs e)
@@ -41,9 +45,9 @@ namespace HocTiengAnh
 
         private void btnDSHocVien_Click(object sender, EventArgs e)
         {
-            AdminHocVien adminHocVienForm = new AdminHocVien();
-            adminHocVienForm.Show();
             this.Hide();
+            AdminHocVien adminHocVienForm = new AdminHocVien();
+            adminHocVienForm.ShowDialog();
         }
         private void LoadDSBaiHoc()
         {
@@ -52,9 +56,10 @@ namespace HocTiengAnh
             using (SqlConnection conn = new SqlConnection(connectString))
             {
                 conn.Open();
-                string query = "select sMaBaiHoc, sTenBaiHoc from tblBaiHoc where bIsDeleted = 0";
+                string query = "select sMaBaiHoc, sTenBaiHoc from tblBaiHoc where bIsDeleted = 0 AND sMaKhoaHoc = @MaKhoaHoc";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@MaKhoaHoc", maKhoaHoc);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())

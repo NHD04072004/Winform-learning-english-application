@@ -203,7 +203,6 @@ namespace HocTiengAnh
         {
             DsBaiHoc ds = new DsBaiHoc();
             ds.ShowDialog();
-            this.Hide();
         }
     }
 }
