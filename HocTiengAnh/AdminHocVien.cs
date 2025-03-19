@@ -15,8 +15,13 @@ namespace HocTiengAnh
     public partial class AdminHocVien : Form
     {
         private string connectString = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
+        private DateTime lastClickTime = DateTime.MinValue;
+
         public AdminHocVien()
         {
+            
+
+
             InitializeComponent();
         }
 
@@ -58,12 +63,12 @@ namespace HocTiengAnh
                     {
                         while (reader.Read())
                         {
-                            string maTK = reader["iMaTK"].ToString();
+                            int maTK = (int)reader["iMaTK"];
                             string tenTK = reader["sTenTK"].ToString();
                             string email = reader["sEmail"].ToString();
                             string password = reader["sMatKhau"].ToString();
 
-                            Button btnKhoaHoc = new Button
+                            Button btnHocVien = new Button
                             {
                                 Text = $"{tenTK}\n{email}",
                                 Size = new Size(200, 50),
@@ -72,15 +77,35 @@ namespace HocTiengAnh
                                 Margin = new Padding(5)
                             };
 
-                            btnKhoaHoc.Click += (s, ev) =>
+                            btnHocVien.Click += (s, ev) =>
                             {
-                                txtMaHocVien.Text = maTK;
-                                txtTenHocVien.Text = tenTK;
-                                txtEmail.Text = email;
-                                txtPassword.Text = password;
+                                string selectedMaTK = maTK.ToString();
+                                string selectedTenTK = tenTK;
+                                string selectedEmail = email;
+                                string selectedPassword = password;
+
+
+                                txtMaHocVien.Text = selectedMaTK;
+                                txtTenHocVien.Text = selectedTenTK;
+                                txtEmail.Text = selectedEmail;
+                                txtPassword.Text = selectedPassword;
                             };
 
-                            flpDSHocVien.Controls.Add(btnKhoaHoc);
+
+                            btnHocVien.Click += (s, ev) =>
+                            {
+                                DateTime now = DateTime.Now;
+                                if ((now - lastClickTime).TotalMilliseconds <= SystemInformation.DoubleClickTime)
+                                {
+                                    AdminChiTietHocVien adminChiTietHocVien = new AdminChiTietHocVien(maTK, tenTK, email, password);
+                                    adminChiTietHocVien.Show();
+                                    this.Hide();
+                                }
+                                lastClickTime = now;
+                            };
+
+
+                            flpDSHocVien.Controls.Add(btnHocVien);
                         }
                     }
                 }

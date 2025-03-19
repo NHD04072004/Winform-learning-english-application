@@ -35,19 +35,19 @@ namespace HocTiengAnh
             this.btnDSHocVien = new System.Windows.Forms.Button();
             this.btnDSBaiHoc = new System.Windows.Forms.Button();
             this.btnDSKhoaHoc = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtMaHocVien = new System.Windows.Forms.TextBox();
+            this.lblMaHocVien = new System.Windows.Forms.Label();
+            this.txtTenHocVien = new System.Windows.Forms.TextBox();
+            this.lblTenHocVien = new System.Windows.Forms.Label();
+            this.flpDSHocVien = new System.Windows.Forms.FlowLayoutPanel();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.lblDSHocVien = new System.Windows.Forms.Label();
-            this.flpDSHocVien = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtTenHocVien = new System.Windows.Forms.TextBox();
-            this.lblTenHocVien = new System.Windows.Forms.Label();
-            this.txtMaHocVien = new System.Windows.Forms.TextBox();
-            this.lblMaHocVien = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -150,6 +150,86 @@ namespace HocTiengAnh
             this.btnDSKhoaHoc.UseVisualStyleBackColor = false;
             this.btnDSKhoaHoc.Click += new System.EventHandler(this.btnDSKhoaHoc_Click);
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(448, 96);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(175, 27);
+            this.txtPassword.TabIndex = 20;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(325, 99);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(82, 20);
+            this.lblPassword.TabIndex = 19;
+            this.lblPassword.Text = "Mật khẩu:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(91, 93);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(175, 27);
+            this.txtEmail.TabIndex = 18;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(21, 96);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(56, 20);
+            this.lblEmail.TabIndex = 17;
+            this.lblEmail.Text = "Email:";
+            // 
+            // txtMaHocVien
+            // 
+            this.txtMaHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHocVien.Location = new System.Drawing.Point(144, 64);
+            this.txtMaHocVien.Name = "txtMaHocVien";
+            this.txtMaHocVien.Size = new System.Drawing.Size(35, 27);
+            this.txtMaHocVien.TabIndex = 16;
+            // 
+            // lblMaHocVien
+            // 
+            this.lblMaHocVien.AutoSize = true;
+            this.lblMaHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaHocVien.Location = new System.Drawing.Point(21, 67);
+            this.lblMaHocVien.Name = "lblMaHocVien";
+            this.lblMaHocVien.Size = new System.Drawing.Size(109, 20);
+            this.lblMaHocVien.TabIndex = 15;
+            this.lblMaHocVien.Text = "Tên học viên:";
+            // 
+            // txtTenHocVien
+            // 
+            this.txtTenHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenHocVien.Location = new System.Drawing.Point(448, 61);
+            this.txtTenHocVien.Name = "txtTenHocVien";
+            this.txtTenHocVien.Size = new System.Drawing.Size(175, 27);
+            this.txtTenHocVien.TabIndex = 14;
+            // 
+            // lblTenHocVien
+            // 
+            this.lblTenHocVien.AutoSize = true;
+            this.lblTenHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenHocVien.Location = new System.Drawing.Point(325, 64);
+            this.lblTenHocVien.Name = "lblTenHocVien";
+            this.lblTenHocVien.Size = new System.Drawing.Size(109, 20);
+            this.lblTenHocVien.TabIndex = 13;
+            this.lblTenHocVien.Text = "Tên học viên:";
+            // 
+            // flpDSHocVien
+            // 
+            this.flpDSHocVien.AutoScroll = true;
+            this.flpDSHocVien.Location = new System.Drawing.Point(24, 126);
+            this.flpDSHocVien.Name = "flpDSHocVien";
+            this.flpDSHocVien.Size = new System.Drawing.Size(599, 272);
+            this.flpDSHocVien.TabIndex = 10;
+            // 
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,85 +272,6 @@ namespace HocTiengAnh
             this.lblDSHocVien.Size = new System.Drawing.Size(338, 32);
             this.lblDSHocVien.TabIndex = 5;
             this.lblDSHocVien.Text = "DANH SÁCH HỌC VIÊN";
-            // 
-            // flpDSHocVien
-            // 
-            this.flpDSHocVien.Location = new System.Drawing.Point(24, 126);
-            this.flpDSHocVien.Name = "flpDSHocVien";
-            this.flpDSHocVien.Size = new System.Drawing.Size(599, 272);
-            this.flpDSHocVien.TabIndex = 10;
-            // 
-            // txtTenHocVien
-            // 
-            this.txtTenHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenHocVien.Location = new System.Drawing.Point(448, 61);
-            this.txtTenHocVien.Name = "txtTenHocVien";
-            this.txtTenHocVien.Size = new System.Drawing.Size(175, 27);
-            this.txtTenHocVien.TabIndex = 14;
-            // 
-            // lblTenHocVien
-            // 
-            this.lblTenHocVien.AutoSize = true;
-            this.lblTenHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenHocVien.Location = new System.Drawing.Point(325, 64);
-            this.lblTenHocVien.Name = "lblTenHocVien";
-            this.lblTenHocVien.Size = new System.Drawing.Size(109, 20);
-            this.lblTenHocVien.TabIndex = 13;
-            this.lblTenHocVien.Text = "Tên học viên:";
-            // 
-            // txtMaHocVien
-            // 
-            this.txtMaHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaHocVien.Location = new System.Drawing.Point(144, 64);
-            this.txtMaHocVien.Name = "txtMaHocVien";
-            this.txtMaHocVien.Size = new System.Drawing.Size(35, 27);
-            this.txtMaHocVien.TabIndex = 16;
-            // 
-            // lblMaHocVien
-            // 
-            this.lblMaHocVien.AutoSize = true;
-            this.lblMaHocVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaHocVien.Location = new System.Drawing.Point(21, 67);
-            this.lblMaHocVien.Name = "lblMaHocVien";
-            this.lblMaHocVien.Size = new System.Drawing.Size(109, 20);
-            this.lblMaHocVien.TabIndex = 15;
-            this.lblMaHocVien.Text = "Tên học viên:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(91, 93);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(175, 27);
-            this.txtEmail.TabIndex = 18;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(21, 96);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(56, 20);
-            this.lblEmail.TabIndex = 17;
-            this.lblEmail.Text = "Email:";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(448, 96);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(175, 27);
-            this.txtPassword.TabIndex = 20;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(325, 99);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(82, 20);
-            this.lblPassword.TabIndex = 19;
-            this.lblPassword.Text = "Mật khẩu:";
             // 
             // AdminHocVien
             // 

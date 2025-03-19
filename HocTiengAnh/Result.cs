@@ -21,7 +21,7 @@ namespace HocTiengAnh
             InitializeComponent();
             this.MaTaiKhoan = sMaTaiKhoan;
             this.MaBaiHoc = sMaBaiHoc;
-            ResultAdapter adapter = new ResultAdapter(MaTaiKhoan, MaBaiHoc);
+            ResultAdapter adapter = new ResultAdapter(Adapter.SessionManager.Instance.CurrentAccount.MaTaiKhoan, MaBaiHoc);
             result = adapter.GetResult();
 
             displayResult();
@@ -36,7 +36,7 @@ namespace HocTiengAnh
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TrangChu tc = new TrangChu(MaBaiHoc);
+            TrangChu tc = new TrangChu();
             tc.ShowDialog();
         }
     }

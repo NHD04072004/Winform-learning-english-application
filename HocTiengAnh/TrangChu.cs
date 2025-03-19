@@ -12,17 +12,15 @@ namespace HocTiengAnh
 {
     public partial class TrangChu : Form
     {
-        private string tenTK;
-        public TrangChu(string tenTK)
+        public TrangChu()
         {
             InitializeComponent();
-            this.tenTK = tenTK;
         }
 
         private void TrangChu_Load(object sender, EventArgs e)
         {
-            btnAccount.Text = tenTK;
-            lblWelcome.Text = $"Chào mừng: {tenTK}";
+            btnAccount.Text = Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan;
+            lblWelcome.Text = $"Chào mừng: {Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan}";
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -32,23 +30,21 @@ namespace HocTiengAnh
 
         private void btnDSKhoaHoc_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DsKhoaHoc dskh = new DsKhoaHoc(tenTK);
+            DsKhoaHoc dskh = new DsKhoaHoc(Adapter.SessionManager.Instance.CurrentAccount.TenTaiKhoan);
             dskh.ShowDialog();
         }
 
         private void btnDSKH_user_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DsBaiHoc dsbh = new DsBaiHoc(tenTK);
+            DsBaiHoc dsbh = new DsBaiHoc();
             dsbh.ShowDialog();
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Dangnhap login = new Dangnhap();
             login.ShowDialog();
+            this.Hide();
         }
 
         private void btnAccount_Click(object sender, EventArgs e)

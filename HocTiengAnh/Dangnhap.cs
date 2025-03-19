@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using HocTiengAnh.Adapter;
 
 namespace HocTiengAnh
 {
@@ -119,6 +120,39 @@ namespace HocTiengAnh
             return ktr;
         }
 
+
+        private void initAccount(string username, string password)
+        {
+            using (SqlConnection conn = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("pr_init_account", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@stentk", username);
+                    cmd.Parameters.AddWithValue("@smatkhau", password);
+
+                    conn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Model.Account account = new Model.Account
+                            {
+                                MaTaiKhoan = (int)reader["iMaTK"],
+                                TenTaiKhoan = reader["sTenTK"].ToString(),
+                                Email = reader["sEmail"].ToString(),
+                                MatKhau = reader["sMatKhau"].ToString(),
+                                checkAdmin = (bool)reader["bCheckAdmin"]
+                            };
+
+                            SessionManager.Instance.SetCurrentAccount(account);
+                        }
+                    }
+                }
+            }
+        }
+
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             string username = tbUsername.Text.Trim();
@@ -132,6 +166,7 @@ namespace HocTiengAnh
 
             bool isAdmin;
             int ktr = Check_login(username, password, out isAdmin);
+            initAccount(username, password);
 
             if (ktr == 1)
             {
@@ -146,7 +181,7 @@ namespace HocTiengAnh
                 else
                 {
                     // Nếu là user, mở giao diện User
-                    TrangChu trangChu = new TrangChu(username);
+                    TrangChu trangChu = new TrangChu();
                     trangChu.ShowDialog();
                 }
 
