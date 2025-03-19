@@ -33,7 +33,7 @@ namespace HocTiengAnh
         // Hàm lấy danh sách bài học
         private void LoadDanhSachBaiHoc()
         {
-            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh_Toan"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -70,7 +70,7 @@ namespace HocTiengAnh
         // Hàm lấy kết quả bài làm tất cả bài học
         private void LoadKetQuaBaiLam()
         {
-            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh_Toan"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -89,7 +89,7 @@ namespace HocTiengAnh
         // Hàm lấy kết quả bài làm của bài học được chọn
         private void LoadKetQuaBaiHoc(string tenBaiHoc)
         {
-            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh_Toan"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(constr))
             {
@@ -148,6 +148,14 @@ namespace HocTiengAnh
             this.Hide();
             DsKhoaHoc dsKhoaHoc = new DsKhoaHoc(_hienNguoiDung);
             dsKhoaHoc.ShowDialog();
+            this.Close();
+        }
+
+        private void btnTrangchu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TrangChu trangChu = new TrangChu(_hienNguoiDung);
+            trangChu.ShowDialog();
             this.Close();
         }
     }

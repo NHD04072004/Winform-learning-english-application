@@ -47,7 +47,7 @@ namespace HocTiengAnh
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(-10, -5);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -71,19 +71,20 @@ namespace HocTiengAnh
             this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.Image = global::HocTiengAnh.Properties.Resources.z6394803753249_fd6515512734cfc9c93b1415f52f6174;
             this.btnAccount.Location = new System.Drawing.Point(21, 511);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(215, 74);
             this.btnAccount.TabIndex = 2;
             this.btnAccount.Text = "<user name>";
             this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAccount.UseVisualStyleBackColor = true;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnDSKH_user
             // 
             this.btnDSKH_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDSKH_user.Location = new System.Drawing.Point(10, 225);
-            this.btnDSKH_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDSKH_user.Margin = new System.Windows.Forms.Padding(2);
             this.btnDSKH_user.Name = "btnDSKH_user";
             this.btnDSKH_user.Size = new System.Drawing.Size(226, 74);
             this.btnDSKH_user.TabIndex = 1;
@@ -95,7 +96,7 @@ namespace HocTiengAnh
             // 
             this.btnDSKHoaHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDSKHoaHoc.Location = new System.Drawing.Point(10, 137);
-            this.btnDSKHoaHoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDSKHoaHoc.Margin = new System.Windows.Forms.Padding(2);
             this.btnDSKHoaHoc.Name = "btnDSKHoaHoc";
             this.btnDSKHoaHoc.Size = new System.Drawing.Size(226, 72);
             this.btnDSKHoaHoc.TabIndex = 0;
@@ -109,9 +110,9 @@ namespace HocTiengAnh
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpDSKhoaHoc.Location = new System.Drawing.Point(25, 56);
-            this.flpDSKhoaHoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpDSKhoaHoc.Margin = new System.Windows.Forms.Padding(2);
             this.flpDSKhoaHoc.Name = "flpDSKhoaHoc";
-            this.flpDSKhoaHoc.Size = new System.Drawing.Size(659, 470);
+            this.flpDSKhoaHoc.Size = new System.Drawing.Size(660, 470);
             this.flpDSKhoaHoc.TabIndex = 1;
             // 
             // lblDSkhoaHoc
@@ -121,9 +122,9 @@ namespace HocTiengAnh
             this.lblDSkhoaHoc.Location = new System.Drawing.Point(21, 14);
             this.lblDSkhoaHoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDSkhoaHoc.Name = "lblDSkhoaHoc";
-            this.lblDSkhoaHoc.Size = new System.Drawing.Size(402, 29);
+            this.lblDSkhoaHoc.Size = new System.Drawing.Size(406, 29);
             this.lblDSkhoaHoc.TabIndex = 0;
-            this.lblDSkhoaHoc.Text = "CÁC kHÓA HỌC DÀNH CHO BẠN";
+            this.lblDSkhoaHoc.Text = "CÁC KHÓA HỌC DÀNH CHO BẠN";
             // 
             // DsKhoaHoc
             // 
@@ -131,7 +132,7 @@ namespace HocTiengAnh
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 591);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DsKhoaHoc";
             this.Text = "DsKhoaHoc";
             this.Load += new System.EventHandler(this.DsKhoaHoc_Load);
