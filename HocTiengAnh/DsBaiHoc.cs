@@ -15,18 +15,18 @@ namespace HocTiengAnh
 {
     public partial class DsBaiHoc : Form
     {
-        private string str = @"Data Source=DESKTOP-VDEUU7B\SQLEXPRESS;Initial Catalog=QUANLYKHOAHOCTIENGANH;Integrated Security=True"; // Thay bằng chuỗi kết nối CSDL của bạn
-        private int maTK; // Lưu mã khóa học được chọn
+        private string str = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
+        private string tenTK;
 
-        public DsBaiHoc(int maTK)
+        public DsBaiHoc(string tenTK)
         {
             InitializeComponent();
-            this.maTK = maTK;
+            this.tenTK = tenTK;
             LoadKhoaHoc();
         }
         private void LoadKhoaHoc()
         {
-            flpDSBaiHoc.Controls.Clear(); // Xóa danh sách cũ trước khi load mới
+            flpDSBaiHoc.Controls.Clear();
 
             try
             {
@@ -40,7 +40,7 @@ namespace HocTiengAnh
                         cmd.Connection = conn;
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.CommandText = "dskhcb";
-                        cmd.Parameters.AddWithValue("@maTK", maTK);
+                        cmd.Parameters.AddWithValue("@tenTK", tenTK);
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
@@ -127,9 +127,6 @@ namespace HocTiengAnh
 
         }
 
-       
-
-
         private void BtnBaiHoc_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
@@ -152,6 +149,9 @@ namespace HocTiengAnh
             
         }
 
-        
+        private void DsBaiHoc_Load(object sender, EventArgs e)
+        {
+            btnAccount.Text = tenTK;
+        }
     }
 }

@@ -8,16 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace HocTiengAnh
 {
     public partial class DsKhoaHoc : Form
     {
-        public DsKhoaHoc()
+        private string tenTK;
+        public DsKhoaHoc(string tenTK)
         {
             InitializeComponent();
+            this.tenTK = tenTK;
         }
-        private string str = @"Data Source=DESKTOP-VDEUU7B\SQLEXPRESS;Initial Catalog=QUANLYKHOAHOCTIENGANH;Integrated Security=True";
+        private string str = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
 
         // hiện các button Khóa Học
         private void LoadKhoaHoc()
@@ -30,7 +33,7 @@ namespace HocTiengAnh
                 using (SqlConnection conn = new SqlConnection(str))
                 {
                     conn.Open();
-                    string query = "SELECT sMaKhoaHoc, sTenKhoaHoc FROM tblKhoaHoc"; // Điều chỉnh truy vấn phù hợp với database của bạn
+                    string query = "SELECT sMaKhoaHoc, sTenKhoaHoc FROM tblKhoaHoc";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         using (SqlDataReader reader = cmd.ExecuteReader())
@@ -40,10 +43,9 @@ namespace HocTiengAnh
                                 string maKhoaHoc = reader["sMaKhoaHoc"].ToString();
                                 string tenKhoaHoc = reader["sTenKhoaHoc"].ToString();
 
-                                // Tạo button mới cho khóa học
                                 Button btnKhoaHoc = new Button();
                                 btnKhoaHoc.Text = tenKhoaHoc;
-                                btnKhoaHoc.Tag = maKhoaHoc; // Lưu ID khóa học để sử dụng sau này
+                                btnKhoaHoc.Tag = maKhoaHoc;
                                 btnKhoaHoc.Width = 250;
                                 btnKhoaHoc.Height = 80;
                                 btnKhoaHoc.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
@@ -73,27 +75,26 @@ namespace HocTiengAnh
             {
                 string maKhoaHoc = clickedButton.Tag.ToString();
                 clickedButton.Click += btnDangKy_Click;
-                
             }
 
         }
 
         private void btnDSKHoaHoc_Click(object sender, EventArgs e)
         {
-            LoadKhoaHoc();
-
+            this.Refresh();
         }
 
         private void DsKhoaHoc_Load(object sender, EventArgs e)
         {
-
+            LoadKhoaHoc();
+            btnAccount.Text = tenTK;
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
             string maKhoaHoc = clickedButton.Tag.ToString();
-            int maTaiKhoan = 6; // Thay bằng ID người dùng hiện tại
+            int maTaiKhoan = 
 
             try
             {
@@ -102,19 +103,19 @@ namespace HocTiengAnh
                     conn.Open();
 
                     // Kiểm tra xem người dùng đã đăng ký khóa học chưa
-                    string checkQuery = "SELECT COUNT(*) FROM tblDanhSachKhoaHocDangKy WHERE iMaTK = 6 AND sMaKhoaHoc = @MaKhoaHoc";
+                    string checkQuery = "SELECT COUNT(*) FROM tblDanhSachKhoaHocDangKy WHERE iMaTK = @MaTaiKhoan AND sMaKhoaHoc = @MaKhoaHoc";
                     using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                     {
-                        //checkCmd.Parameters.AddWithValue("@MaTaiKhoan", maTaiKhoan);
+                        checkCmd.Parameters.AddWithValue("@MaTaiKhoan", maTaiKhoan);
                         checkCmd.Parameters.AddWithValue("@MaKhoaHoc", maKhoaHoc);
                         int count = (int)checkCmd.ExecuteScalar();
 
                         if (count == 0) // Nếu chưa đăng ký, thì thêm mới
                         {
-                            string insertQuery = "INSERT INTO tblDanhSachKhoaHocDangKy (iMaTK, sMaKhoaHoc) VALUES (6, @MaKhoaHoc)";
+                            string insertQuery = "INSERT INTO tblDanhSachKhoaHocDangKy (iMaTK, sMaKhoaHoc) VALUES (@MaTaiKhoan, @MaKhoaHoc)";
                             using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
                             {
-                                //insertCmd.Parameters.AddWithValue("@MaTaiKhoa", maTaiKhoan);
+                                insertCmd.Parameters.AddWithValue("@MaTaiKhoan", maTaiKhoan);
                                 insertCmd.Parameters.AddWithValue("@MaKhoaHoc", maKhoaHoc);
                                 insertCmd.ExecuteNonQuery();
                             }
@@ -200,11 +201,9 @@ namespace HocTiengAnh
 
         private void btnDSKH_user_Click(object sender, EventArgs e)
         {
-            int maTK = 6; // Lấy mã người dùng đang đăng nhập
-            DsBaiHoc ds = new DsBaiHoc(maTK);
-            ds.Show();
+            DsBaiHoc ds = new DsBaiHoc(tenTK);
+            ds.ShowDialog();
             this.Hide();
-            
         }
     }
 }

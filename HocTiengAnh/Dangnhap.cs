@@ -16,6 +16,7 @@ namespace HocTiengAnh
     public partial class Dangnhap : Form
     {
         ErrorProvider errorProvider = new ErrorProvider();
+        private string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
         public Dangnhap()
         {
             InitializeComponent();
@@ -89,7 +90,6 @@ namespace HocTiengAnh
 
         private int Check_login(string username, string password, out bool isAdmin)
         {
-            string constr = ConfigurationManager.ConnectionStrings["db_hoc_tieng_anh"].ConnectionString;
             int ktr = -1;
             isAdmin = false;
 
@@ -146,7 +146,7 @@ namespace HocTiengAnh
                 else
                 {
                     // Nếu là user, mở giao diện User
-                    TrangChu trangChu = new TrangChu();
+                    TrangChu trangChu = new TrangChu(username);
                     trangChu.ShowDialog();
                 }
 

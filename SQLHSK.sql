@@ -2,9 +2,6 @@
 
 USE QUANLYKHOAHOCTIENGANH;
 
-USE master;
-SELECT * FROM sys.dm_exec_requests WHERE database_id = DB_ID('model');
-
 CREATE TABLE [dbo].[tblTaiKhoan] (
     [iMaTK]       INT IDENTITY(1,1),
     [sTenTK]      VARCHAR (50) NOT NULL ,
@@ -481,46 +478,41 @@ CREATE PROC check_login
 )
 AS
 BEGIN
-	IF NOT EXISTS ( SELECT 1 FROM tblTaiKhoan WHERE sTenTK = @stentk )
+	IF NOT EXISTS (SELECT 1 FROM tblTaiKhoan WHERE sTenTK = @stentk)
 	BEGIN
-		SELECT -1 AS ktr;
+		SELECT -1 AS ktr, NULL AS bCheckAdmin;
 		RETURN;
 	END
-	IF EXISTS (SELECT 1 FROM tblTaiKhoan WHERE sTenTK = @stentk AND sMatKhau = @smatkhau )
+	
+	DECLARE @bCheckAdmin BIT;
+	
+	IF EXISTS (SELECT 1 FROM tblTaiKhoan WHERE sTenTK = @stentk AND sMatKhau = @smatkhau)
 	BEGIN
-		SELECT 1 AS ktr;
+		SELECT @bCheckAdmin = bCheckAdmin FROM tblTaiKhoan WHERE sTenTK = @stentk;
+		SELECT 1 AS ktr, @bCheckAdmin AS bCheckAdmin;
 	END
 	ELSE
 	BEGIN
-		SELECT 0 AS Ktr;
+		SELECT 0 AS ktr, NULL AS bCheckAdmin;
 	END
 END
 
--- Hàm đăng nhập tài khoản
-CREATE PROC insert_data_login
-(
-	@stentk VARCHAR(50),
-	@semail VARCHAR(MAX),
-	@smatkhau VARCHAR(50)
-)
+drop proc check_login
+
+create proc dskhcb
+	@tenTK VARCHAR(50)
 AS
 BEGIN
-	INSERT INTO tblTaiKhoan(sTenTK, sEmail, sMatKhau)
-	VALUES (@stentk, @semail, @smatkhau)
-END
+    SELECT 
+        kh.sMaKhoaHoc, 
+        kh.sTenKhoaHoc,
+        dkh.bTrangThaiHoc
+    FROM tblTaiKhoan tk
+    INNER JOIN tblDanhSachKhoaHocDangKy dkh ON tk.iMaTK = dkh.iMaTK
+    INNER JOIN tblKhoaHoc kh ON dkh.sMaKhoaHoc = kh.sMaKhoaHoc
+    WHERE tk.sTenTK = @tenTK
+        AND dkh.bIsDeleted = 0
+        AND kh.bIsDeleted = 0;
+END;
 
-
-
-CREATE PROC DSCau_hoi
-(
-	@mabaihoc VARCHAR(10)
-)
-AS
-BEGIN
-	SELECT *  FROM tblCauHoi
-	WHERE sMaBaiHoc = @mabaihoc
-END
-
-exec dbo.DSCau_hoi @mabaihoc = 'BH001';
-
-drop proc DSCau_hoi*/
+exec dskhcb 'johndoe';

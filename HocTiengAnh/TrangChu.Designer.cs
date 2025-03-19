@@ -35,6 +35,7 @@ namespace HocTiengAnh
             this.btnDSKH_user = new System.Windows.Forms.Button();
             this.btnDSKhoaHoc = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -50,6 +51,7 @@ namespace HocTiengAnh
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.splitContainer1.Panel1.Controls.Add(this.btnDangXuat);
             this.splitContainer1.Panel1.Controls.Add(this.btnAccount);
             this.splitContainer1.Panel1.Controls.Add(this.btnDSKH_user);
             this.splitContainer1.Panel1.Controls.Add(this.btnDSKhoaHoc);
@@ -119,6 +121,23 @@ namespace HocTiengAnh
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Chào mừng: ";
             // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDangXuat.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDangXuat.Location = new System.Drawing.Point(4, 306);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(211, 80);
+            this.btnDangXuat.TabIndex = 4;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -127,7 +146,6 @@ namespace HocTiengAnh
             this.Controls.Add(this.splitContainer1);
             this.Name = "TrangChu";
             this.Text = "Trang chủ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TrangChu_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -145,6 +163,7 @@ namespace HocTiengAnh
         private System.Windows.Forms.Button btnDSKH_user;
         private System.Windows.Forms.Button btnDSKhoaHoc;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Button btnDangXuat;
     }
 }
 
