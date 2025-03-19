@@ -32,8 +32,8 @@ namespace HocTiengAnh
 
         private void btnDSKhoaHoc_Click(object sender, EventArgs e)
         {
-            DsKhoaHoc dskh = new DsKhoaHoc(tenTK);
-            dskh.ShowDialog();
+            //DsKhoaHoc dskh = new DsKhoaHoc(tenTK);
+            //dskh.ShowDialog();
             this.Hide();
         }
 
