@@ -94,7 +94,7 @@ namespace HocTiengAnh
         {
             Button clickedButton = sender as Button;
             string maKhoaHoc = clickedButton.Tag.ToString();
-            int maTaiKhoan = 1;
+            int maTaiKhoan = 6;
 
             try
             {

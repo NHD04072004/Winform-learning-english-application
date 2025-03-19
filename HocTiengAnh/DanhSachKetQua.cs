@@ -146,8 +146,8 @@ namespace HocTiengAnh
         private void btnKhoaHoc_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //DsKhoaHoc dsKhoaHoc = new DsKhoaHoc();
-            //dsKhoaHoc.ShowDialog();
+            DsKhoaHoc dsKhoaHoc = new DsKhoaHoc(_hienNguoiDung);
+            dsKhoaHoc.ShowDialog();
             this.Close();
         }
     }
