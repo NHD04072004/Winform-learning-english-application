@@ -34,6 +34,10 @@ namespace HocTiengAnh
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnDSHocVien = new System.Windows.Forms.Button();
             this.btnDSKhoaHoc = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -47,6 +51,8 @@ namespace HocTiengAnh
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.lblDSHocVien = new System.Windows.Forms.Label();
+            this.txtngaybatdau = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -68,6 +74,12 @@ namespace HocTiengAnh
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.txtngaybatdau);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.btnIn);
+            this.splitContainer1.Panel2.Controls.Add(this.btnSearch);
+            this.splitContainer1.Panel2.Controls.Add(this.txtSearch);
+            this.splitContainer1.Panel2.Controls.Add(this.lblSearch);
             this.splitContainer1.Panel2.Controls.Add(this.txtPassword);
             this.splitContainer1.Panel2.Controls.Add(this.lblPassword);
             this.splitContainer1.Panel2.Controls.Add(this.txtEmail);
@@ -132,6 +144,46 @@ namespace HocTiengAnh
             this.btnDSKhoaHoc.Text = "KHÓA HỌC";
             this.btnDSKhoaHoc.UseVisualStyleBackColor = false;
             this.btnDSKhoaHoc.Click += new System.EventHandler(this.btnDSKhoaHoc_Click);
+            // 
+            // btnIn
+            // 
+            this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Location = new System.Drawing.Point(144, 404);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(115, 52);
+            this.btnIn.TabIndex = 24;
+            this.btnIn.Text = "In";
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(371, 167);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(115, 39);
+            this.btnSearch.TabIndex = 23;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(91, 167);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(175, 27);
+            this.txtSearch.TabIndex = 22;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(21, 170);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(67, 20);
+            this.lblSearch.TabIndex = 21;
+            this.lblSearch.Text = "Search:";
             // 
             // txtPassword
             // 
@@ -208,9 +260,9 @@ namespace HocTiengAnh
             // flpDSHocVien
             // 
             this.flpDSHocVien.AutoScroll = true;
-            this.flpDSHocVien.Location = new System.Drawing.Point(24, 126);
+            this.flpDSHocVien.Location = new System.Drawing.Point(24, 254);
             this.flpDSHocVien.Name = "flpDSHocVien";
-            this.flpDSHocVien.Size = new System.Drawing.Size(599, 272);
+            this.flpDSHocVien.Size = new System.Drawing.Size(599, 144);
             this.flpDSHocVien.TabIndex = 10;
             // 
             // btnXoa
@@ -256,6 +308,24 @@ namespace HocTiengAnh
             this.lblDSHocVien.TabIndex = 5;
             this.lblDSHocVien.Text = "DANH SÁCH HỌC VIÊN";
             // 
+            // txtngaybatdau
+            // 
+            this.txtngaybatdau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtngaybatdau.Location = new System.Drawing.Point(144, 134);
+            this.txtngaybatdau.Name = "txtngaybatdau";
+            this.txtngaybatdau.Size = new System.Drawing.Size(175, 27);
+            this.txtngaybatdau.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 137);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 20);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Ngày bắt đầu:";
+            // 
             // AdminHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -293,5 +363,11 @@ namespace HocTiengAnh
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.TextBox txtngaybatdau;
+        private System.Windows.Forms.Label label1;
     }
 }

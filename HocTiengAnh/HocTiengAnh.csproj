@@ -91,6 +91,12 @@
     <Compile Include="DsBaiHoc.Designer.cs">
       <DependentUpon>DsBaiHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="DSHocVienTheoNam.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSHocVienTheoNam.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DsKhoaHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,12 @@
     <Compile Include="DanhSachKetQua.Designer.cs">
       <DependentUpon>DanhSachKetQua.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptDSSoNguoiTheoNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDSSoNguoiTheoNam.Designer.cs">
+      <DependentUpon>rptDSSoNguoiTheoNam.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +189,10 @@
     <EmbeddedResource Include="DsBaiHoc.resx">
       <DependentUpon>DsBaiHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DSHocVienTheoNam.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DSHocVienTheoNam.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DsKhoaHoc.resx">
       <DependentUpon>DsKhoaHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +215,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDSSoNguoiTheoNam.resx">
+      <DependentUpon>rptDSSoNguoiTheoNam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>

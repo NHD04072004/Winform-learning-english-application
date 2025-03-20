@@ -12,6 +12,10 @@ CREATE TABLE [dbo].[tblTaiKhoan] (
     CONSTRAINT [PK_tblTaiKhoan] PRIMARY KEY CLUSTERED ([iMaTK] ASC)
 );
 GO
+
+alter table tblTaiKhoan
+add dNgayBatDau datetime;
+
 CREATE TABLE [dbo].[tblKhoaHoc] (
     [sMaKhoaHoc]  VARCHAR (10)   NOT NULL,
     [sTenKhoaHoc] NVARCHAR (MAX) NOT NULL,
@@ -101,6 +105,31 @@ VALUES
     ('bookwormy', 'bookworm@example.com', 'ReadMore2024', 0),
     ('gaminglegends', 'gamelegend@example.com', 'Passw0rdGame', 0);
 GO
+select iMaTK, sTenTK, sEmail, sMatKhau, (YEAR(GETDATE()) - year(dNgayBatDau)) as 'nam' from tblTaiKhoan where bCheckAdmin = 0;
+select * from tblTaiKhoan
+alter table tblTaiKhoan
+add nam int 
+update tblTaiKhoan
+set nam = YEAR(GETDATE()) - year(dNgayBatDau)
+update tblTaiKhoan 
+set dNgayBatDau = '2022/07/03' where iMaTK = 2;
+go
+update tblTaiKhoan 
+set dNgayBatDau = '2021/05/03' where iMaTK = 3;
+go
+update tblTaiKhoan 
+set dNgayBatDau = '2020/07/03' where iMaTK = 4;
+update tblTaiKhoan
+set dNgayBatDau = '2020/01/01'
+
+create proc pr_dshocvientheonam
+	@nam int
+as
+begin
+	select sTenTK, sEmail, nam from tblTaiKhoan where nam = @nam
+end;
+exec pr_dshocvientheonam 3;
+
 
 -- BẢNG KHÓA HỌC
 INSERT INTO [dbo].[tblKhoaHoc] ([sMaKhoaHoc], [sTenKhoaHoc],[bIsDeleted])

@@ -56,7 +56,7 @@ namespace HocTiengAnh
             using (SqlConnection conn = new SqlConnection(connectString))
             {
                 conn.Open();
-                string query = "select iMaTK, sTenTK, sEmail, sMatKhau from tblTaiKhoan where bCheckAdmin = 0";
+                string query = "select iMaTK, sTenTK, sEmail, sMatKhau, nam from tblTaiKhoan where bCheckAdmin = 0";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -67,10 +67,11 @@ namespace HocTiengAnh
                             string tenTK = reader["sTenTK"].ToString();
                             string email = reader["sEmail"].ToString();
                             string password = reader["sMatKhau"].ToString();
+                            int nam = (int)reader["nam"];
 
                             Button btnHocVien = new Button
                             {
-                                Text = $"{tenTK}\n{email}",
+                                Text = $"{tenTK}\nSố năm: {nam}",
                                 Size = new Size(200, 50),
                                 Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold),
                                 BackColor = Color.White,
@@ -233,6 +234,85 @@ namespace HocTiengAnh
             txtTenHocVien.Text = "";
             txtEmail.Text = "";
             txtPassword.Text = "";
+        }
+
+        private void LoadDSHocVienTheoNam(int namHoc)
+        {
+            flpDSHocVien.Controls.Clear();
+
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                conn.Open();
+                string query = "SELECT iMaTK, sTenTK, sEmail, sMatKhau, nam FROM tblTaiKhoan WHERE bCheckAdmin = 0 AND nam = @nam";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@nam", namHoc);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int maTK = (int)reader["iMaTK"];
+                            string tenTK = reader["sTenTK"].ToString();
+                            string email = reader["sEmail"].ToString();
+                            string password = reader["sMatKhau"].ToString();
+                            int nam = (int)reader["nam"];
+
+                            Button btnHocVien = new Button
+                            {
+                                Text = $"{tenTK}\nSố năm: {nam}",
+                                Size = new Size(200, 50),
+                                Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold),
+                                BackColor = Color.White,
+                                Margin = new Padding(5)
+                            };
+
+                            btnHocVien.Click += (s, ev) =>
+                            {
+                                txtMaHocVien.Text = maTK.ToString();
+                                txtTenHocVien.Text = tenTK;
+                                txtEmail.Text = email;
+                                txtPassword.Text = password;
+                            };
+
+                            btnHocVien.Click += (s, ev) =>
+                            {
+                                DateTime now = DateTime.Now;
+                                if ((now - lastClickTime).TotalMilliseconds <= SystemInformation.DoubleClickTime)
+                                {
+                                    this.Hide();
+                                    AdminChiTietHocVien adminChiTietHocVien = new AdminChiTietHocVien(maTK, tenTK, email, password);
+                                    adminChiTietHocVien.ShowDialog();
+                                }
+                                lastClickTime = now;
+                            };
+
+                            flpDSHocVien.Controls.Add(btnHocVien);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtSearch.Text, out int namHoc))
+            {
+                LoadDSHocVienTheoNam(namHoc);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập số năm hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            int nam = Convert.ToInt32(txtSearch.Text);
+            this.Hide();
+            rptDSSoNguoiTheoNam rpt = new rptDSSoNguoiTheoNam(nam);
+            rpt.ShowDialog();
         }
     }
 }
